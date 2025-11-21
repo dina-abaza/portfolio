@@ -52,8 +52,8 @@ const Com_AboutPage = () => {
                                 <img src="/team_photos/Ellipse 8-4.png" alt="Youssef Tame" className="object-cover w-full h-full" />
                             </div>
                         </div>
-                        <p className="mt-4 text-lg font-semibold text-center">YOSSEF TAME</p>
-                        <p className="text-sm text-gray-400 text-center">Flutter DEVELOPER</p>
+                        <p className="mt-4 text-lg font-semibold text-center">Yussef Taie </p>
+                        <p className="text-sm text-gray-400 text-center">Software Developer</p>
                     </div>
 
                     {/* الصف الثاني */}

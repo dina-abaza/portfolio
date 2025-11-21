@@ -69,7 +69,7 @@ export default function ServicesPage() {
 
             <div className="mb-12 flex flex-col items-center gap-4 md:flex-row md:justify-start md:items-center md:ml-20">
                 <PrimaryButton href={"/contact"} text="START YOUR PROJECT NOW" />
-                <SecondaryButton href={"/ourwork"} text="CONTACT US" />
+                <SecondaryButton href={"/ourwork"} text="SEE OUR WORK" />
             </div>
 
         </main>

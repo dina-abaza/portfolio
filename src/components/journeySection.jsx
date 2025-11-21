@@ -37,7 +37,7 @@ export default function JourneySection() {
   ];
 
   return (
-    <div className="relative w-full mx-auto flex flex-col items-center justify-between py-5 overflow-hidden">
+    <div className="relative no-lenis w-full mx-auto flex flex-col items-center justify-between py-5 overflow-hidden px-2 md:px-4">
       {/* الخلفية */}
       <div className="absolute inset-0 -z-10">
         <Image

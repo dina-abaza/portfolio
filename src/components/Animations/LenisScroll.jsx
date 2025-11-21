@@ -1,4 +1,3 @@
-// src/components/LenisScroll.jsx
 "use client";
 
 import { useEffect } from "react";
@@ -6,19 +5,18 @@ import Lenis from "@studio-freight/lenis";
 
 export default function LenisScroll() {
   useEffect(() => {
+    const isMobile =
+      typeof window !== "undefined" &&
+      window.matchMedia("(max-width: 768px)").matches;
+
+    if (!isMobile) return;
+
     const lenis = new Lenis({
-      duration: 1.5,
-      easing: (t) => t,       // Linear smoothing
+      duration: 0.3,
       smooth: true,
       smoothWheel: true,
       smoothTouch: true,
-    });
-
-    // منع Lenis من التأثير على السلايدر أو أي section بعلامة no-lenis
-    const noLenisSections = document.querySelectorAll(".no-lenis");
-    noLenisSections.forEach((sec) => {
-      sec.addEventListener("wheel", (e) => e.stopPropagation(), { passive: true });
-      sec.addEventListener("touchmove", (e) => e.stopPropagation(), { passive: true });
+      easing: (t) => 1 - Math.pow(1 - t, 3),
     });
 
     function raf(time) {
@@ -26,6 +24,13 @@ export default function LenisScroll() {
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
+
+    // ✅ استثناء أي قسم فيه className="no-lenis"
+    const noLenisSections = document.querySelectorAll(".no-lenis");
+    noLenisSections.forEach((sec) => {
+      sec.addEventListener("wheel", (e) => e.stopPropagation(), { passive: true });
+      sec.addEventListener("touchmove", (e) => e.stopPropagation(), { passive: true });
+    });
 
     return () => lenis.destroy();
   }, []);
