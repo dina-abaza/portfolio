@@ -12,6 +12,29 @@ export default function ImagesHome() {
     "/imghome4.png",
   ];
 
+  const texts = [
+    {
+      title: "Smart Systems for Smarter Decisions",
+      subtitle:
+        "From dashboards to internal tools, we build solutions that keep your business running smoothly",
+    },
+    {
+      title: "Designs That Speak to Your Users",
+      subtitle:
+        "We create clean, intuitive, and engaging interfaces tailored to your audience",
+    },
+    {
+      title: "Turn Your Idea Into a Mobile Experience",
+      subtitle:
+        "From concept to app stores, we design and develop apps that users love to use",
+    },
+    {
+      title: "websites that elevate your business",
+      subtitle:
+        "we craft modern, fast and user friendly websites that make your brand stand out",
+    },
+  ];
+
   const animations = [
     {
       initial: { opacity: 0, scale: 1.1, x: 60 },
@@ -43,9 +66,10 @@ export default function ImagesHome() {
   }, [images.length]);
 
   const currentAnimation = animations[animIndex];
+  const currentText = texts[index];
 
   return (
-    <section className="relative no-lenis  w-full h-[250px] md:h-[512px] overflow-hidden mx-auto">
+    <section className="relative no-lenis w-full h-[250px] md:h-[512px] overflow-hidden mx-auto">
       <div className="relative w-full h-full perspective-[1200px]">
         <AnimatePresence mode="sync">
           <motion.div
@@ -61,20 +85,27 @@ export default function ImagesHome() {
               alt={`Slide ${index + 1}`}
               fill
               className="object-cover"
-              priority // لتحميل الصورة مباشرة بدون lazy
+              priority
             />
+
+            {/* النصوص مع الحركة */}
+            <motion.div
+              key={currentText.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
+              className="absolute inset-0 flex flex-col justify-center items-center p-8 bg-black/30 backdrop-blur-[2px]"
+            >
+              <h1 className="text-[16px] md:text-[30px] font-bold text-white text-center max-w-[874px] drop-shadow-lg">
+                {currentText.title}
+              </h1>
+              <h3 className="text-[14px] md:text-[20px] text-gray-200 font-semibold mt-5 text-center max-w-[1000px] drop-shadow-md">
+                {currentText.subtitle}
+              </h3>
+            </motion.div>
           </motion.div>
         </AnimatePresence>
-      </div>
-
-      <div className="absolute inset-0 min-h-[78px] flex flex-col justify-center items-center p-8 bg-black/30 backdrop-blur-[2px]">
-        <h1 className="text-[16px] md:text-[30px] font-bold text-white text-center max-w-[874px] drop-shadow-lg">
-          "websites that elevate your business"
-        </h1>
-        <h3 className="text-[14px] md:text-[20px] text-gray-200 font-semibold mt-5 text-center max-w-[1000px] drop-shadow-md">
-          we craft modern, fast and user friendly websites that make your
-          <span className="block text-center">brand stand out</span>
-        </h3>
       </div>
     </section>
   );

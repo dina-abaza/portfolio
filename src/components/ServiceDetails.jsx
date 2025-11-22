@@ -117,8 +117,8 @@ const ServiceDetails = ({ styles }) => {
 
             </div>
             <div className={styles.buttonsFot}>
-                <PrimaryButton text={"START YOUR PROJECT NOW"} href={"#"} />
-                <SecondaryButton text={"CONTACT US"} href={"#"} />
+                <PrimaryButton text={"START YOUR PROJECT NOW"} href={"/contact"} />
+                
             </div>
 
         </div>
