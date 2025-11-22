@@ -22,13 +22,13 @@ export default function ServicesPage() {
     ];
 
     const items = [
-        { id: 1, category: "mobile", title: "MOBILE APP DESIGN", description: "Modern and intuitive app interfaces.", image: "/service_imgs/s1.jpg" },
-        { id: 2, category: "website", title: "BUSINESS WEBSITES", description: "Professional corporate sites for companies.", image: "/service_imgs/s2.jpg" },
-        { id: 3, category: "mobile", title: "CROSS-PLATFORM APPS", description: "Flutter or React Native apps for iOS & Android.", image: "/service_imgs/s3.jpg" },
+        { id: 1, category: "mobile", title: "MOBILE APP DESIGN", description: "Modern and intuitive app interfaces.", image: "/service14.png" },
+        { id: 2, category: "website", title: "BUSINESS WEBSITES", description: "Professional corporate sites for companies.", image: "/service2.png" },
+        { id: 3, category: "mobile", title: "CROSS-PLATFORM APPS", description: "Flutter or React Native apps for iOS & Android.", image: "/service3.png" },
         { id: 4, category: "uiux", title: "DASHBOARD & SYSTEM DESIGN", description: "Interfaces for management systems and admins.", image: "/service4.png" },
         { id: 5, category: "uiux", title: "APP PROTOTYPING", description: "UI/UX prototypes before development.", image: "/service1.png" },
         { id: 6, category: "website", title: "WEBSITE REDESIGN", description: "Revamping old sites with modern UI.", image: "/service6.png" },
-        { id: 7, category: "maintenance", title: "BUG FIXING & UPDATES", description: "Regular updates and performance improvements.", image: "/service7.png" },
+        { id: 7, category: "maintenance", title: "BUG FIXING & UPDATES", description: "Regular updates and performance improvements.", image: "/service5.png" },
         { id: 8, category: "mobile", title: "E-COMMERCE APPS", description: "Build mobile shops with payment and delivery integrations.", image: "/service8.png" },
         { id: 9, category: "website", title: "LANDING PAGES", description: "High-conversion landing pages for marketing campaigns.", image: "/service9.png" },
         { id: 10, category: "uiux", title: "PORTFOLIO DESIGN", description: "Elegant and clean portfolios for professionals.", image: "/service10.png" },
@@ -67,9 +67,9 @@ export default function ServicesPage() {
 
             <ServicesBetter />
 
-            <div className="mb-12 ml-0 flex mt-[-80px] flex-col items-center gap-4 md:flex-row md:justify-start md:items-center md:ml-10">
+            <div className="mb-12 flex flex-col items-center gap-4 md:flex-row md:justify-start md:items-center md:ml-20">
                 <PrimaryButton href={"/contact"} text="START YOUR PROJECT NOW" />
-                <SecondaryButton href={"/ourwork"} text="CONTUCT US" />
+                <SecondaryButton href={"/ourwork"} text="SEE OUR WORK" />
             </div>
 
         </main>

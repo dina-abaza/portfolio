@@ -16,7 +16,7 @@ export default function ServicesBetter() {
                 <div className="w-full  bg-black flex flex-col justify-between  px-6 md:px-10 py-10 rounded-[8px]">
 
                     <div className="w-full flex flex-col justify-start">
-                        <div className="w-full  max-w-[1268px]  flex flex-col justify-between mb-[100px] px-6 md:px-10 py-10 rounded-[8px]">
+                        <div className="w-full  max-w-[1268px]  flex flex-col justify-between mb-[50px] px-6 md:px-10 py-10 rounded-[8px]">
 
                             {[
                                 { id: 1, title: "A COMPLETE TEAM", desc: "UI/UX, frontend, backend, and Flutter all in one place — we provide you with a complete journey from start to launch." },
@@ -26,13 +26,13 @@ export default function ServicesBetter() {
                             ].map((item, index) => (
                                 <div
                                     key={item.id}
-                                    className={`flex flex-col md:flex-row items-start ${index !== 0 ? "mt-[72px]" : ""}`}
+                                    className={`flex flex-col justify-center md:flex-row md:items-start ${index !== 0 ? "mt-[72px]" : ""}`}
                                 >
                                     {/* الدائرة مع الفراغ والـ border */}
-                                    <div className="relative flex items-center justify-center w-[50px] md:w-[82px] h-[50px] md:h-[82px] flex-shrink-0 mb-4 md:mb-0">
+                                    <div className="relative flex items-center justify-center w-[60px] md:w-[82px] h-[60px] md:h-[82px] flex-shrink-0 mb-4 md:mb-0">
                                         {/* الخلفية البيضاء الداخلية */}
                                         <div className="absolute inset-[10px] bg-white rounded-full flex items-center justify-center">
-                                            <span className="text-[18px] font-medium text-black">
+                                            <span className="text-[18px] md:text-[24px] font-medium text-black">
                                                 {item.id}
                                             </span>
                                         </div>
