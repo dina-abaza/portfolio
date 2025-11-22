@@ -7,7 +7,7 @@ import SecondaryButton from "./buttons/SecondaryButton";
           <PrimaryButton
            href="/contact" text= "START YOUR PROJECT NOW" />
           <SecondaryButton 
-          href="/our-work" text="SEE OUR WORK"/>
+          href="/ourwork" text="SEE OUR WORK"/>
         </div>
     )
    }
