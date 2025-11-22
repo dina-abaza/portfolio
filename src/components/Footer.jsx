@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn , FaTiktok} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn ,FaWhatsapp ,FaGithub } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -21,15 +21,27 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Our Social Media</h3>
             <div className="flex items-center gap-4 ">
-              {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaTiktok ].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 hover:border-[#171717] hover:text-[#171717] transition"
-                >
-                  <Icon />
-                </a>
-              ))}
+              {[FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaGithub ].map((Icon, i) => {
+                const urls = [
+                  "https://www.facebook.com/share/p/1a3StycFXk/?mibextid=wwXIfr",
+                  "https://www.instagram.com/aurorasoftwarehouse/?igsh=eDkwMWFqeHk5d2pm#",
+                  "https://www.linkedin.com/company/aurora-softwarehouse/",
+                  "https://wa.me/201010871431",
+                  "https://github.com/aurorasoftwarehouse/portfolio"
+
+                ];
+                return (
+                  <a
+                    key={i}
+                    href={urls[i]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 hover:border-[#171717] hover:text-[#171717] transition"
+                  >
+                    <Icon />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -52,7 +64,7 @@ export default function Footer() {
             {[
               { name: "Home", href: "/" },
               { name: "Services", href: "/services" },
-              { name: "Our Work", href: "/our-work" },
+              { name: "Our Work", href: "/ourwork" },
               { name: "About Us", href: "/about" },
               { name: "Contact Us", href: "/contact" },
             ].map((link) => (
@@ -71,8 +83,8 @@ export default function Footer() {
         {/* العمود 4 - Contact */}
         <div>
           <h3 className="text-lg font-semibold mb-6">Contact</h3>
-          <p className="text-[#8C8C8C] mb-2 text-sm">Phone: +1 234 567 890</p>
-          <p className="text-[#8C8C8C] text-sm">Email: info@aurora.com</p>
+          <p className="text-[#8C8C8C] mb-2 text-sm">Phone: 01010871431</p>
+          <p className="text-[#8C8C8C] text-sm normal-case">Email: aurorasoftwarehouse@gmail.com</p>
         </div>
       </div>
 

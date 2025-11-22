@@ -1,12 +1,6 @@
-
 "use client";
-import {
-  Search,
-  Code2,
-  ClipboardCheck,
-  Rocket,
-  Palette,
-} from "lucide-react";
+import { Search, Code2, ClipboardCheck, Rocket, Palette } from "lucide-react";
+import Image from "next/image";
 
 export default function JourneySection() {
   const steps = [
@@ -43,17 +37,19 @@ export default function JourneySection() {
   ];
 
   return (
-    <div className="relative w-full mx-auto flex flex-col items-center justify-between py-5 overflow-hidden">
+    <div className="relative no-lenis w-full mx-auto flex flex-col items-center justify-between py-5 overflow-hidden px-2 md:px-4">
       {/* الخلفية */}
-      <div
-        className="absolute inset-0 bg-transparent -z-10"
-        style={{
-          backgroundImage: "url('/imghome5.png')",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/imghome5.png"
+          alt="Journey Background"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* overlay لتوضيح النصوص */}
+        <div className="absolute inset-0 " />
+      </div>
 
       {steps.map((step, index) => (
         <div
