@@ -1,8 +1,8 @@
-
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function ImagesHome() {
   const images = [
@@ -10,6 +10,29 @@ export default function ImagesHome() {
     "/imghome2.png",
     "/imghome3.png",
     "/imghome4.png",
+  ];
+
+  const texts = [
+    {
+      title: "Smart Systems for Smarter Decisions",
+      subtitle:
+        "From dashboards to internal tools, we build solutions that keep your business running smoothly",
+    },
+    {
+      title: "Designs That Speak to Your Users",
+      subtitle:
+        "We create clean, intuitive, and engaging interfaces tailored to your audience",
+    },
+    {
+      title: "Turn Your Idea Into a Mobile Experience",
+      subtitle:
+        "From concept to app stores, we design and develop apps that users love to use",
+    },
+    {
+      title: "websites that elevate your business",
+      subtitle:
+        "we craft modern, fast and user friendly websites that make your brand stand out",
+    },
   ];
 
   const animations = [
@@ -36,42 +59,53 @@ export default function ImagesHome() {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-      setAnimIndex(Math.floor(Math.random() * animations.length)); // حركة عشوائية كل مرة
+      setAnimIndex(Math.floor(Math.random() * animations.length));
     }, 4000);
 
     return () => clearInterval(timer);
   }, [images.length]);
 
-const currentAnimation = animations[animIndex];
-
+  const currentAnimation = animations[animIndex];
+  const currentText = texts[index];
 
   return (
-    <section className="relative w-full h-[250px] md:h-[512px] overflow-hidden mx-auto">
-      {/* الصور */}
+    <section className="relative no-lenis w-full h-[250px] md:h-[512px] overflow-hidden mx-auto">
       <div className="relative w-full h-full perspective-[1200px]">
         <AnimatePresence mode="sync">
-          <motion.img
+          <motion.div
             key={images[index]}
-            src={images[index]}
-            alt={`Slide ${index + 1}`}
-            className="absolute w-full h-full object-cover "
             initial={currentAnimation.initial}
             animate={currentAnimation.animate}
             exit={currentAnimation.exit}
             transition={{ duration: 1.5, ease: [0.45, 0, 0.55, 1] }}
-          />
-        </AnimatePresence>
-      </div>
+            className="absolute w-full h-full"
+          >
+            <Image
+              src={images[index]}
+              alt={`Slide ${index + 1}`}
+              fill
+              className="object-cover"
+              priority
+            />
 
-      {/* النصوص */}
-      <div className="absolute inset-0 mih-h[78px] flex flex-col justify-center items-center p-8 bg-black/30 backdrop-blur-[2px]">
-        <h1 className="text-[16px] md:text-[30px] font-bold text-white text-center max-w-[874px] drop-shadow-lg">
-          "websites that elevate your business"
-        </h1>
-        <h3 className="text-[14px] md:text-[20px] text-gray-200 font-semibold mt-5 text-center max-w-[1000px] drop-shadow-md ">
-          we craft modern, fast and user friendly websites that make your
-          <span className="block text-center">brand stand out</span>
-        </h3>
+            {/* النصوص مع الحركة */}
+            <motion.div
+              key={currentText.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
+              className="absolute inset-0 flex flex-col justify-center items-center p-8 bg-black/30 backdrop-blur-[2px]"
+            >
+              <h1 className="text-[16px] md:text-[30px] font-bold text-white text-center max-w-[874px] drop-shadow-lg">
+                {currentText.title}
+              </h1>
+              <h3 className="text-[14px] md:text-[20px] text-gray-200 font-semibold mt-5 text-center max-w-[1000px] drop-shadow-md">
+                {currentText.subtitle}
+              </h3>
+            </motion.div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );
