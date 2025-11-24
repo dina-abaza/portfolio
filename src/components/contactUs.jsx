@@ -21,15 +21,28 @@ export default function Com_ContactUs() {
     });
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState(null);
+    const [errors, setErrors] = useState({});
 
-
+    console.log("--------------------------------")
+    console.log(errors)
 
     const handleChange = (e) => {
         const { name, value } = e.target;
+
+        //add value to formData
         setFormData(prevState => ({
             ...prevState,
             [name]: value
         }));
+
+        // console.log(name  , value)
+        // console.log("name"  , "value")
+
+        // 🔍 check for empty fields
+        setErrors(prevErrors => ({
+            ...prevErrors,
+            [name]: !value.trim()
+        }))
     };
 
     const handleSubmit = async (e) => {
@@ -37,6 +50,23 @@ export default function Com_ContactUs() {
         setLoading(true);
         setStatus(null);
 
+        // 🔍 check for empty fields
+        const newErrors = {};
+        if (!formData.fullName.trim()) newErrors.fullName = true;
+        if (!formData.email.trim()) newErrors.email = true;
+        if (!formData.phone.trim()) newErrors.phone = true;
+        if (!formData.ideaDescription.trim()) newErrors.ideaDescription = true;
+
+        setErrors(newErrors);
+
+        // ❌ لو فيه حقول فاضية.. هنعمل توقف
+        if (Object.keys(newErrors).length > 0) {
+            setLoading(false);
+            // toast.error("Please fill all required fields.");
+            return;
+        }
+
+        // لو كله تمام → كمل ارسال
         try {
             const response = await fetch('/api/contact', {
                 method: 'POST',
@@ -48,19 +78,20 @@ export default function Com_ContactUs() {
                 toast.success('Message sent successfully!');
                 setStatus('success');
                 setFormData({ fullName: '', email: '', phone: '', ideaDescription: '' });
+                setErrors({});
             } else {
                 toast.error('Failed to send message.');
                 setStatus('error');
             }
         } catch (error) {
-            console.error('Error submitting form:', error);
+            console.error(error);
             toast.error('An error occurred while sending the message.');
             setStatus('error');
         } finally {
-            setTimeout(() => setStatus(null), 2000);
             setLoading(false);
         }
     };
+
 
 
     return (
@@ -91,39 +122,40 @@ export default function Com_ContactUs() {
                         <input
                             type="text"
                             name="fullName"
-                            required
+                            // required
                             placeholder="FULL NAME"
                             value={formData.fullName}
                             onChange={handleChange}
-                            className="placeholder:text-[#000] placeholder:text-[16px]- w-full border-[2px] m-0 border-black rounded-[16px] px-[16px] py-[8px] text-black focus:outline-none focus:ring-2 focus:ring-black-500"
+                            className={`placeholder:text-[#000] placeholder:text-[14px] sm:placeholder:text-[16px] w-full border-[2px] m-0 border-black rounded-[16px] px-[16px] py-[8px] text-black focus:outline-none  focus:ring-black-500 ${errors.fullName ? "border-red-500 placeholder:text-[#ff2525]" : "border-black"}`}
                         />
                         <input
                             type="email"
                             name="email"
-                            required
+                            // required
                             placeholder="Your Email"
                             value={formData.email}
                             onChange={handleChange}
-                            className="placeholder:text-[#000] placeholder:text-[16px]- w-full border-[2px] m-0 border-black rounded-[16px] px-[16px] py-[8px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+                            className={`placeholder:text-[#000] placeholder:text-[14px] sm:placeholder:text-[16px] w-full border-[2px] m-0 border-black rounded-[16px] px-[16px] py-[8px] text-gray-700 focus:outline-none focus:ring-red-500 ${errors.email ? "border-red-500 placeholder:text-[#ff2525]" : "border-black"}`}
                         />
                         <input
                             type="tel"
                             name="phone"
-                            required
+                            // required
                             placeholder="PHONE"
                             value={formData.phone}
                             onChange={handleChange}
-                            className="placeholder:text-[#000] placeholder:text-[16px] w-full border-[2px] border-black rounded-[16px] px-[16px] py-[8px] text-gray-700 focus:outline-none focus:ring-2 m-0 focus:ring-red-500"
+                            className=
+                            {`placeholder:text-[#000] placeholder:text-[14px] sm:placeholder:text-[16px] w-full border-[2px] border-black rounded-[16px] px-[16px] py-[8px] text-gray-700 focus:outline-none m-0 focus:ring-red-500 ${errors.phone ? "border-red-500 placeholder:text-[#ff2525]" : "border-black"}`}
                         />
                         <p className="text-[#000] font-bold text-[16px]">A brief description of the idea</p>
                         <textarea
                             rows="5"
                             name="ideaDescription"
-                            required
+                            // required
                             placeholder="Add text"
                             value={formData.ideaDescription}
                             onChange={handleChange}
-                            className="placeholder:text-[#424242] placeholder:text-[14px] placeholder:font-normal border-[2px] border-black rounded-[16px] px-[16px] py-[8px] m-0 h-[235px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+                            className={`placeholder:text-[#424242] placeholder:text-[14px] sm:placeholder:text-[16px] placeholder:font-normal border-[2px] border-black rounded-[16px] px-[16px] py-[8px] m-0 h-[235px] text-gray-700 focus:outline-none focus:ring-red-500 ${errors.ideaDescription ? "border-red-500 placeholder:text-[#ff2525]" : "border-black"}`}
                         />
                         <button
                             type="submit"
