@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@sendinblue/client": "^3.3.1",
     "@studio-freight/lenis": "^1.0.42",
     "axios": "^1.12.2",
     "framer-motion": "^12.23.24",

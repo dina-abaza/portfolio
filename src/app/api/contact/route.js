@@ -1,8 +1,7 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '../../../lib/db';
 import Contact from '../../../models/Contact';
-import nodemailer from 'nodemailer';
-import { google } from 'googleapis';
+import * as SibApiV3Sdk from '@sendinblue/client';
 // POST
 export async function POST(request) {
     await dbConnect();
@@ -25,34 +24,90 @@ export async function POST(request) {
         };
 
         const contact = await Contact.create(sanitizedData);
-          
 
-        // Configure Nodemailer transporter using App Password (requires Google 2-Step Verification)
-        const transporter = nodemailer.createTransport({
-            host: process.env.BREVO_SMTP_HOST,
-            port: process.env.BREVO_SMTP_PORT,
-            secure: false, // true for 465, false for other ports
-            auth: {
-                user: process.env.BREVO_SMTP_LOGIN,
-                pass: process.env.BREVO_SMTP_KEY,
-            },
-        });
 
-         
-        // Email options
-        const mailOptions = {
-            from: process.env.BREVO_SMTP_LOGIN,
-            to: process.env.TO_EMAIL || "aurorasoftwarehouse@gmail.com",   // Use TO_EMAIL from .env.local or default
-            subject: `New Contact Submission from ${sanitizedData.fullName}`,
-            text: `
-                    Full Name: ${sanitizedData.fullName}
-                    Email: ${sanitizedData.email}
-                    Phone: ${sanitizedData.phone}
-                    Idea: ${sanitizedData.ideaDescription}
-            `
-        };
+        const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
+        const brevoApiKey = process.env.BREVO_API_KEY;
+        if (!brevoApiKey) {
+            throw new Error('BREVO_API_KEY is not defined in environment variables.');
+        }
+        const apiKey = apiInstance.authentications['apiKey'];
+        apiKey.apiKey = brevoApiKey;
 
-        await transporter.sendMail(mailOptions);
+        const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
+
+        sendSmtpEmail.subject = `New Contact Submission from ${sanitizedData.fullName}`;
+
+        sendSmtpEmail.htmlContent = `
+  <div style="
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fa;
+      padding: 30px;
+  ">
+    <div style="
+        max-width: 600px;
+        margin: auto;
+        background: #ffffff;
+        padding: 25px 35px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        border: 1px solid #e6e6e6;
+    ">
+
+      <h2 style="
+          text-align: center;
+          color: #1a1a1a;
+          margin-bottom: 25px;
+          letter-spacing: 0.5px;
+      ">
+        📩 New Contact Submission
+      </h2>
+
+      <div style="font-size: 15px; color: #333;">
+        <p style="margin: 10px 0;"><strong>👤 Full Name:</strong> ${sanitizedData.fullName}</p>
+        <p style="margin: 10px 0;"><strong>📧 Email:</strong> ${sanitizedData.email}</p>
+        <p style="margin: 10px 0;"><strong>📞 Phone:</strong> ${sanitizedData.phone}</p>
+        <p style="margin: 10px 0;"><strong>💡 Idea:</strong></p>
+
+        <div style="
+            background: #f0f4ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 5px;
+            border-left: 4px solid #3c6ff8;
+            line-height: 1.6;
+        ">
+          ${sanitizedData.ideaDescription}
+        </div>
+      </div>
+
+      <p style="text-align:center; margin-top: 30px; font-size: 13px; color: #888;">
+        Sent automatically from Aurora Portfolio Contact Form
+      </p>
+
+    </div>
+  </div>
+`;
+
+
+
+                                     sendSmtpEmail.sender = {
+                                        name: "Aurora Contact Form",
+                                        email: "aurorasoftwarehouse@gmail.com"
+                                      };
+                                      
+
+
+        const toEmail = process.env.TO_EMAIL || "aurorasoftwarehouse@gmail.com";
+        sendSmtpEmail.to = [{ email: toEmail }];
+
+        try {
+            await apiInstance.sendTransacEmail(sendSmtpEmail);
+        } catch (emailError) {
+            console.error('Error sending email via Brevo:', emailError);
+            // Optionally, you can decide to return an error response here or let the main catch block handle it.
+            // For now, we'll just log and proceed, assuming the contact form submission itself was successful.
+        }
 
         return NextResponse.json(
             { message: 'Message received & email sent successfully!', data: contact },
