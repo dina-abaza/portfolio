@@ -23,12 +23,11 @@ export default function Footer() {
             <div className="flex items-center gap-4 ">
               {[FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaGithub ].map((Icon, i) => {
                 const urls = [
-                  "https://www.facebook.com/share/p/1a3StycFXk/?mibextid=wwXIfr",
+                  "https://www.facebook.com/profile.php?id=61583612949472&mibextid=wwXIfr&rdid=eYnoLCPQebDQBjbB&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F14PwV9Dofjs%2F%3Fmibextid%3DwwXIfr#",
                   "https://www.instagram.com/aurorasoftwarehouse/?igsh=eDkwMWFqeHk5d2pm#",
                   "https://www.linkedin.com/company/aurora-softwarehouse/",
                   "https://wa.me/201010871431",
-                  "https://github.com/aurorasoftwarehouse/portfolio"
-
+                  "https://github.com/aurorasoftwarehouse"
                 ];
                 return (
                   <a

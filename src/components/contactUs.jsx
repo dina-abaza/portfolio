@@ -1,10 +1,12 @@
 "use client";
-import { LuPhone, LuMail, LuMapPin, LuPin, LuFacebook, LuInstagram, LuTwitter, LuLinkedin } from "react-icons/lu";
+import { LuPhone, LuMail, LuWhatsapp, LuPin, LuFacebook, LuInstagram, LuTwitter, LuLinkedin } from "react-icons/lu";
+import { FaWhatsapp, FaGithub } from "react-icons/fa";
 import { useState } from 'react';
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Header from "./Header";
 import { Inter } from "next/font/google";
+import Link from "next/link";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -23,6 +25,13 @@ export default function Com_ContactUs() {
     const [status, setStatus] = useState(null);
     const [errors, setErrors] = useState({});
 
+    const hoverColors = [
+        "hover:text-[#0A66C2]", // Linkedin
+        "hover:text-[#1877F2]", // Facebook
+        "hover:text-[#E4405F]", // Instagram
+        "hover:text-[#25D366]", // WhatsApp
+        "hover:text-[#333]"     // GitHub
+    ];
     // console.log("--------------------------------")
     // console.log(errors)
 
@@ -231,21 +240,46 @@ export default function Com_ContactUs() {
                         <div className="flex flex-col px-[32px] h-[110px] sm:h-[155px] py-[30px] sm:py-[47px] rounded-[16px] bg-[#fff] items-start gap-[16px]">
                             <span className="font-bold text-[#000]">Our social media</span>
                             <div className="flex items-center text-[#000] gap-[16px]">
-                                <LuLinkedin className="w-[24px] h-[24px]" />
-                                <LuFacebook className="w-[24px] h-[24px]" />
-                                <LuInstagram className="w-[24px] h-[24px]" />
-                                <LuTwitter className="w-[24px] h-[24px]" />
+                                {[LuLinkedin, LuFacebook, LuInstagram, FaWhatsapp, FaGithub].map((Icon, i) => {
+                                    const urls = [
+                                        "https://www.linkedin.com/company/aurora-softwarehouse/",
+                                        "https://www.facebook.com/profile.php?id=61583612949472&mibextid=wwXIfr&rdid=eYnoLCPQebDQBjbB&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F14PwV9Dofjs%2F%3Fmibextid%3DwwXIfr#",
+                                        "https://www.instagram.com/aurorasoftwarehouse/?igsh=eDkwMWFqeHk5d2pm#",
+                                        "https://wa.me/201010871431",
+                                        "https://github.com/aurorasoftwarehouse"
+                                    ];
+                                    return (
+                                        <Link
+                                            key={i}
+                                            href={`${urls[i]}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+
+                                        >
+                                           <Icon
+  className={`
+    w-[24px] h-[24px]
+    transition-all duration-300 ease-out
+    hover:scale-125 hover:-rotate-6 hover:drop-shadow-[0_4px_8px_rgba(0,0,0,0.2)]
+    ${hoverColors[i]}
+  `}
+/>
+
+
+                                        </Link>
+                                    );
+                                })}
                             </div>
                         </div>
                     </div>
                 </div>
-            
-            <div className="w-full m-3 block sm:hidden">
 
-                <p className="font-bold text-[24px] text-start mt-[10px]">FAQ  <span className="ml-[8px] relative top-[-5px]"> ⌵
-                </span>
-                </p>
-            </div>
+                <div className="w-full m-3 block sm:hidden">
+
+                    <p className="font-bold text-[24px] text-start mt-[10px]">FAQ  <span className="ml-[8px] relative top-[-5px]"> ⌵
+                    </span>
+                    </p>
+                </div>
 
                 {/* قسم الأسئلة FAQ */}
                 <div className="w-full lg:w-[1264px] bg-[#fff] p-[32px] flex flex-col gap-5 text-[#000] rounded-[16px] justify-center text-left mt-3 sm:mt-10">
