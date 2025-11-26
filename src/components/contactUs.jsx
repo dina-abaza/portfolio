@@ -23,8 +23,8 @@ export default function Com_ContactUs() {
     const [status, setStatus] = useState(null);
     const [errors, setErrors] = useState({});
 
-    console.log("--------------------------------")
-    console.log(errors)
+    // console.log("--------------------------------")
+    // console.log(errors)
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -108,14 +108,14 @@ export default function Com_ContactUs() {
                 <div className="flex flex-col sm:flex-row gap-9 md:gap-10 justify-center items-start w-full">
 
                     {/* النموذج */}
-                    <form onSubmit={handleSubmit} className="space-y-6 w-full sm:w-[573px] font-bold text-black bg-[#fff] p-[32px] flex flex-col gap-[32px] rounded-[16px] h-auto sm:h-[798px]">
+                    <form onSubmit={handleSubmit} className="space-y-6 w-full sm:w-[573px] font-bold text-black bg-[#fff] p-[32px] flex flex-col gap-[32px] rounded-[16px] h-[768px] sm:h-[798px]">
 
                         <h5 className={`text-[20px] font-bold ${inter.className}
                         `}>
                             Start Your Project
                         </h5>
 
-                        <p className={`text-[14px] font-normal ${inter.className}`}>
+                        <p className={`text-[14px] mt-[-40px] m-0 font-normal ${inter.className}`}>
                             Tell us about your project and let's create something extraordinary together.
                         </p>
 
@@ -147,7 +147,7 @@ export default function Com_ContactUs() {
                             className=
                             {`placeholder:text-[#000] placeholder:text-[14px] sm:placeholder:text-[16px] w-full border-[2px] border-black rounded-[16px] px-[16px] py-[8px] text-gray-700 focus:outline-none m-0 focus:ring-red-500 ${errors.phone ? "border-red-500 placeholder:text-[#ff2525]" : "border-black"}`}
                         />
-                        <p className="text-[#000] font-bold text-[16px]">A brief description of the idea</p>
+                        <p className="text-[#000] m-0 font-bold text-[16px]">A brief description of the idea</p>
                         <textarea
                             rows="5"
                             name="ideaDescription"
@@ -155,7 +155,7 @@ export default function Com_ContactUs() {
                             placeholder="Add text"
                             value={formData.ideaDescription}
                             onChange={handleChange}
-                            className={`placeholder:text-[#424242] placeholder:text-[14px] sm:placeholder:text-[16px] placeholder:font-normal border-[2px] border-black rounded-[16px] px-[16px] py-[8px] m-0 h-[235px] text-gray-700 focus:outline-none focus:ring-red-500 ${errors.ideaDescription ? "border-red-500 placeholder:text-[#ff2525]" : "border-black"}`}
+                            className={`placeholder:text-[#424242] placeholder:text-[14px] sm:placeholder:text-[16px] placeholder:font-normal border-[2px] border-black rounded-[16px] px-[16px] py-[8px] m-0 h-[849px] sm:h-[235px] text-gray-700 focus:outline-none focus:ring-red-500 ${errors.ideaDescription ? "border-red-500 placeholder:text-[#ff2525]" : "border-black"}`}
                         />
                         <button
                             type="submit"
@@ -189,7 +189,7 @@ export default function Com_ContactUs() {
                     <div className="w-full sm:w-[649px] h-auto sm:h-[798px] flex flex-col sm:gap-12 gap-5 text-[#FFFFFF] text-left">
 
                         {/* الإيميل */}
-                        <div className="flex flex-col py-[47px] px-[32px] rounded-[16px] bg-[#fff] items-start gap-2 h-[155px]">
+                        <div className="flex flex-col  px-[32px] rounded-[16px] bg-[#fff] items-start gap-2 h-[110px] sm:h-[155px] py-[30px] sm:py-[47px]">
                             <div className="flex flex-col gap-2 h-[70px]">
                                 <div className="flex items-center text-[#000] gap-2">
                                     <LuMail
@@ -198,12 +198,13 @@ export default function Com_ContactUs() {
                                     />
                                     <span className="font-bold">Email address</span>
                                 </div>
-                                <p className="text-[#424242] p-0">Aroura@team.gmail.com</p>
+                                <p className="text-[#424242] p-0">aurorasoftwarehouse@gmail.com
+                                </p>
                             </div>
                         </div>
 
                         {/* الهاتف */}
-                        <div className="flex flex-col py-[47px] px-[32px] h-[165px] rounded-[16px] bg-[#fff] items-start gap-2">
+                        <div className="flex flex-col px-[32px] h-[110px] sm:h-[155px] py-[30px] sm:py-[47px] rounded-[16px] bg-[#fff] items-start gap-2">
                             <div className="flex items-center text-[#000] text-[16px] gap-2">
                                 <LuPhone
                                     size={24}
@@ -211,11 +212,11 @@ export default function Com_ContactUs() {
                                 />
                                 <span className="font-bold">Phone number</span>
                             </div>
-                            <p className="text-[#424242] text-[16px]">012 3456789</p>
+                            <p className="text-[#424242] text-[16px]">+20 101 087 1431</p>
                         </div>
 
                         {/* الموقع */}
-                        <div className="flex flex-col py-[47px] px-[32px] h-[165px] rounded-[16px] bg-[#fff] items-start gap-2">
+                        <div className="flex flex-col px-[32px] h-[150px] sm:h-[190px] py-[30px] sm:py-[47px] rounded-[16px] bg-[#fff] items-start gap-2">
                             <div className="flex items-center text-[#000] gap-2">
                                 <LuPin className="w-[24px] h-[24px]" />
                                 <span className="font-bold">Location</span>
@@ -227,7 +228,7 @@ export default function Com_ContactUs() {
                         </div>
 
                         {/* السوشيال ميديا */}
-                        <div className="flex flex-col py-[47px] px-[32px] h-[165px] rounded-[16px] bg-[#fff] items-start gap-[16px]">
+                        <div className="flex flex-col px-[32px] h-[110px] sm:h-[155px] py-[30px] sm:py-[47px] rounded-[16px] bg-[#fff] items-start gap-[16px]">
                             <span className="font-bold text-[#000]">Our social media</span>
                             <div className="flex items-center text-[#000] gap-[16px]">
                                 <LuLinkedin className="w-[24px] h-[24px]" />
@@ -238,10 +239,17 @@ export default function Com_ContactUs() {
                         </div>
                     </div>
                 </div>
+            
+            <div className="w-full m-3 block sm:hidden">
+
+                <p className="font-bold text-[24px] text-start mt-[10px]">FAQ  <span className="ml-[8px] relative top-[-5px]"> ⌵
+                </span>
+                </p>
+            </div>
 
                 {/* قسم الأسئلة FAQ */}
-                <div className="w-full lg:w-[1264px] bg-[#fff] p-[32px] flex flex-col gap-5 text-[#000] rounded-[16px] justify-center text-left mt-10">
-                    <p className="font-bold text-[24px] mb-[32px]">FAQ</p>
+                <div className="w-full lg:w-[1264px] bg-[#fff] p-[32px] flex flex-col gap-5 text-[#000] rounded-[16px] justify-center text-left mt-3 sm:mt-10">
+                    <p className="font-bold text-[24px] mb-[10px] hidden sm:block">FAQ</p>
                     <p className="font-bold text-[18px]">
                         Do I need to have a complete idea?
                         <span className="text-[#424242] font-normal"> No, we help you from the very first stage.</span>
