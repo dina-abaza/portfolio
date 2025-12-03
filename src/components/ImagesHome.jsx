@@ -57,7 +57,7 @@ return () => clearInterval(timer);
 const currentAnimation = animations[animIndex];
 
 return (
-<section className="relative w-full mx-auto h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[90vh] xl:h-[100vh] overflow-hidden bg-black">
+<section className="relative w-full mx-auto h-[200px] md:h-[600px] overflow-hidden bg-black">
 <div className="relative w-full h-full perspective-[1200px]">
 <AnimatePresence mode="sync">
 <motion.div
