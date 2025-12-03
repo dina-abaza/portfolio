@@ -5,108 +5,82 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function ImagesHome() {
-  const images = [
-    "/imghome1.png",
-    "/imghome2.png",
-    "/imghome3.png",
-    "/imghome4.png",
-  ];
+const images = [
+"/posterhome1.png",
+"/posterhome2.png",
+"/posterhome3.png",
+"/posterhome4.png",
+];
 
-  const texts = [
-    {
-      title: "Smart Systems for Smarter Decisions",
-      subtitle:
-        "From dashboards to internal tools, we build solutions that keep your business running smoothly",
-    },
-    {
-      title: "Designs That Speak to Your Users",
-      subtitle:
-        "We create clean, intuitive, and engaging interfaces tailored to your audience",
-    },
-    {
-      title: "Turn Your Idea Into a Mobile Experience",
-      subtitle:
-        "From concept to app stores, we design and develop apps that users love to use",
-    },
-    {
-      title: "websites that elevate your business",
-      subtitle:
-        "we craft modern, fast and user friendly websites that make your brand stand out",
-    },
-  ];
+const animations = [
+{
+initial: { opacity: 0, scale: 1.1, x: 60 },
+animate: { opacity: 1, scale: 1, x: 0 },
+exit: { opacity: 0, scale: 0.95, x: -60 },
+},
+{
+initial: { rotateY: 90, opacity: 0 },
+animate: { rotateY: 0, opacity: 1 },
+exit: { rotateY: -90, opacity: 0 },
+},
+{
+initial: {
+clipPath: "inset(0 50% 0 50%)",
+WebkitClipPath: "inset(0 50% 0 50%)",
+opacity: 0
+},
+animate: {
+clipPath: "inset(0 0% 0 0%)",
+WebkitClipPath: "inset(0 0% 0 0%)",
+opacity: 1
+},
+exit: {
+clipPath: "inset(0 50% 0 50%)",
+WebkitClipPath: "inset(0 50% 0 50%)",
+opacity: 0
+},
+},
+];
 
-  const animations = [
-    {
-      initial: { opacity: 0, scale: 1.1, x: 60 },
-      animate: { opacity: 1, scale: 1, x: 0 },
-      exit: { opacity: 0, scale: 0.95, x: -60 },
-    },
-    {
-      initial: { rotateY: 90, opacity: 0 },
-      animate: { rotateY: 0, opacity: 1 },
-      exit: { rotateY: -90, opacity: 0 },
-    },
-    {
-      initial: { clipPath: "inset(0 50% 0 50%)", opacity: 0 },
-      animate: { clipPath: "inset(0 0% 0 0%)", opacity: 1 },
-      exit: { clipPath: "inset(0 50% 0 50%)", opacity: 0 },
-    },
-  ];
+const [index, setIndex] = useState(0);
+const [animIndex, setAnimIndex] = useState(0);
 
-  const [index, setIndex] = useState(0);
-  const [animIndex, setAnimIndex] = useState(0);
+useEffect(() => {
+const timer = setInterval(() => {
+setIndex((prev) => (prev + 1) % images.length);
+setAnimIndex(Math.floor(Math.random() * animations.length));
+}, 4000);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length);
-      setAnimIndex(Math.floor(Math.random() * animations.length));
-    }, 4000);
+return () => clearInterval(timer);
+}, [images.length]);
 
-    return () => clearInterval(timer);
-  }, [images.length]);
+const currentAnimation = animations[animIndex];
 
-  const currentAnimation = animations[animIndex];
-  const currentText = texts[index];
+return (
+<section className="relative w-full mx-auto h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[90vh] xl:h-[100vh] overflow-hidden bg-black">
+<div className="relative w-full h-full perspective-[1200px]">
+<AnimatePresence mode="sync">
+<motion.div
+key={images[index]}
+initial={currentAnimation.initial}
+animate={currentAnimation.animate}
+exit={currentAnimation.exit}
+transition={{ duration: 1.5, ease: [0.45, 0, 0.55, 1] }}
+className="absolute inset-0"
+>
+<Image
+src={images[index]}
+alt={`Slide ${index + 1}`}
+fill
+className="object-fill" 
+priority
+/>
 
-  return (
-    <section className="relative no-lenis w-full h-[250px] md:h-[512px] overflow-hidden mx-auto">
-      <div className="relative w-full h-full perspective-[1200px]">
-        <AnimatePresence mode="sync">
-          <motion.div
-            key={images[index]}
-            initial={currentAnimation.initial}
-            animate={currentAnimation.animate}
-            exit={currentAnimation.exit}
-            transition={{ duration: 1.5, ease: [0.45, 0, 0.55, 1] }}
-            className="absolute w-full h-full"
-          >
-            <Image
-              src={images[index]}
-              alt={`Slide ${index + 1}`}
-              fill
-              className="object-cover"
-              priority
-            />
 
-            {/* النصوص مع الحركة */}
-            <motion.div
-              key={currentText.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
-              className="absolute inset-0 flex flex-col justify-center items-center p-8 bg-black/30 backdrop-blur-[2px]"
-            >
-              <h1 className="text-[16px] md:text-[30px] font-bold text-white text-center max-w-[874px] drop-shadow-lg">
-                {currentText.title}
-              </h1>
-              <h3 className="text-[14px] md:text-[20px] text-gray-200 font-semibold mt-5 text-center max-w-[1000px] drop-shadow-md">
-                {currentText.subtitle}
-              </h3>
-            </motion.div>
-          </motion.div>
-        </AnimatePresence>
-      </div>
-    </section>
-  );
+</motion.div>
+</AnimatePresence>
+</div>
+</section>
+
+);
 }

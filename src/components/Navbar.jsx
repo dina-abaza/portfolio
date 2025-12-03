@@ -9,11 +9,21 @@ export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileMenu, setMobileMenu] = useState(false);
 
-  const links = [
+  // Desktop & Tablet (بدون dropdown)
+  const linksDesktop = [
+    { name: "HOME", path: "/" },
+    { name: "SERVICES", path: "/services" },
+    { name: "OUR WORK", path: "/ourwork" },
+    { name: "ABOUT US", path: "/about" },
+    { name: "CONTACT US", path: "/contact" },
+  ];
+
+  // Mobile — SERVICES فوقتها dropdown وترتيبها بعد HOME
+  const linksMobile = [
     { name: "HOME", path: "/" },
     {
       name: "SERVICES",
-      path: "/services",
+      path: "/services", // تروح للصفحة عادي
       dropdown: [
         { name: "Website Development", path: "/services?filter=website" },
         { name: "Mobile Application", path: "/services?filter=mobile" },
@@ -26,69 +36,31 @@ export default function Navbar() {
     { name: "CONTACT US", path: "/contact" },
   ];
 
-  // حذف HOME من نسخة التابلت
-  const tabletLinks = links.filter((link) => link.name !== "HOME");
+  const tabletLinks = linksDesktop.filter((link) => link.name !== "HOME");
 
   return (
-    <nav className="w-full flex flex-col items-center mt-10 relative z-10">
+    <nav className="w-full flex flex-col items-center mt-10 relative z-[100]">
+
       {/* ===== Desktop Navbar (≥881px) ===== */}
       <div className="hidden lg:flex items-center justify-between w-full max-w-[965px] px-4 py-2 rounded-full shadow-4xl bg-black/40 backdrop-blur-md border border-white/30">
-        {/* Logo */}
         <div className="flex-shrink-0">
           <Link href="/" onClick={() => setActive(null)}>
             <img src="/logo/aurora.svg" alt="Aurora Logo" className="w-[130px] h-auto" />
           </Link>
         </div>
 
-        {/* Links */}
         <ul className="flex items-center gap-4 text-[14px] font-medium tracking-wider">
-          {links.map((link, i) => (
+          {linksDesktop.map((link, i) => (
             <li key={i} className="relative">
               <Link
-                href={link.path || "#"}
+                href={link.path}
                 onClick={() => setActive(i)}
                 className={`flex items-center justify-center gap-[8px] w-[140px] h-[44px] rounded-full transition-all duration-300 ${
                   active === i ? "text-white" : "text-white/70 hover:text-white"
                 }`}
               >
                 {link.name}
-                {link.dropdown && (
-                  <FaChevronDown
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setOpenDropdown(openDropdown === i ? null : i);
-                    }}
-                    className={`text-[9px] transition-transform duration-300 cursor-pointer ${
-                      openDropdown === i ? "rotate-180" : ""
-                    }`}
-                  />
-                )}
               </Link>
-
-              {/* Dropdown */}
-              <AnimatePresence>
-                {link.dropdown && openDropdown === i && (
-                  <motion.div
-                    initial={{ opacity: 0, scaleY: 0 }}
-                    animate={{ opacity: 1, scaleY: 1 }}
-                    exit={{ opacity: 0, scaleY: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                    style={{ transformOrigin: "top" }}
-                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[300px] bg-black/20 backdrop-blur-md rounded-[24px] flex flex-col p-2 shadow-lg z-20"
-                  >
-                    {link.dropdown.map((item, idx) => (
-                      <Link
-                        key={idx}
-                        href={item.path}
-                         onClick={() => setOpenDropdown(null)}
-                        className="w-[240px] h-[40px] mx-auto mb-2 last:mb-0 rounded-full flex items-center justify-center text-white bg-white/5 hover:bg-white/10 transition-colors duration-300"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
             </li>
           ))}
         </ul>
@@ -96,18 +68,12 @@ export default function Navbar() {
 
       {/* ===== Tablet Navbar (880px - 768px) ===== */}
       <div className="hidden md:flex lg:hidden flex-col items-center w-full px-6 py-4">
-        {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-        >
-          <Link href="/" onClick={() => setActive(null)}>
+        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
+          <Link href="/">
             <img src="/logo/aurora.svg" alt="Aurora Logo" className="w-[150px] mb-8" />
           </Link>
         </motion.div>
 
-        {/* Links */}
         <motion.ul
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -115,55 +81,16 @@ export default function Navbar() {
           className="flex justify-center flex-wrap gap-8 text-white/80 text-[14px] font-medium"
         >
           {tabletLinks.map((link, i) => (
-            <li key={i} className="relative">
-              <div className="flex items-center gap-2">
-                <Link
-                  href={link.path || "#"}
-                  onClick={() => setActive(i)}
-                  className={`flex items-center gap-[6px] hover:text-white transition-colors duration-300 ${
-                    active === i ? "text-white" : ""
-                  }`}
-                >
-                  {link.name}
-                </Link>
-
-                {link.dropdown && (
-                  <FaChevronDown
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setOpenDropdown(openDropdown === i ? null : i);
-                    }}
-                    className={`text-[9px] cursor-pointer transition-transform duration-300 ${
-                      openDropdown === i ? "rotate-180" : ""
-                    }`}
-                  />
-                )}
-              </div>
-
-              {/* Dropdown */}
-              <AnimatePresence>
-                {link.dropdown && openDropdown === i && (
-                  <motion.div
-                    initial={{ opacity: 0, scaleY: 0 }}
-                    animate={{ opacity: 1, scaleY: 1 }}
-                    exit={{ opacity: 0, scaleY: 0 }}
-                    transition={{ duration: 0.3 }}
-                    style={{ transformOrigin: "top" }}
-                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[280px] bg-black/30 backdrop-blur-md rounded-[20px] flex flex-col p-2 shadow-lg z-20"
-                  >
-                    {link.dropdown.map((item, idx) => (
-                      <Link
-                        key={idx}
-                        href={item.path}
-                        onClick={() => setOpenDropdown(null)}
-                        className="w-[230px] h-[38px] mx-auto mb-2 last:mb-0 rounded-full flex items-center justify-center text-white bg-white/5 hover:bg-white/10 transition-colors duration-300"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+            <li key={i}>
+              <Link
+                href={link.path}
+                onClick={() => setActive(i)}
+                className={`hover:text-white transition-colors duration-300 ${
+                  active === i ? "text-white" : ""
+                }`}
+              >
+                {link.name}
+              </Link>
             </li>
           ))}
         </motion.ul>
@@ -171,7 +98,7 @@ export default function Navbar() {
 
       {/* ===== Mobile Navbar (≤767px) ===== */}
       <div className="flex md:hidden items-center justify-between w-full px-6 py-3">
-        <Link href="/" onClick={() => setActive(null)}>
+        <Link href="/">
           <img src="/logo/aurora.svg" alt="Aurora Logo" className="w-[110px]" />
         </Link>
 
@@ -196,21 +123,33 @@ export default function Navbar() {
               </button>
             </div>
 
-            {links.map((link, i) => (
+            {linksMobile.map((link, i) => (
               <div key={i} className="w-full flex flex-col gap-2">
+
+                {/* لو فيه dropdown (SERVICES) */}
                 {link.dropdown ? (
                   <>
-                    <button
-                      onClick={() => setOpenDropdown(openDropdown === i ? null : i)}
-                      className="w-full flex justify-between items-center text-white font-medium py-2 px-3 rounded-full hover:bg-white/10 transition-colors"
-                    >
-                      {link.name}
-                      <FaChevronDown
-                        className={`${
-                          openDropdown === i ? "rotate-180" : ""
-                        } transition-transform duration-300`}
-                      />
-                    </button>
+                    <div className="flex items-center w-full justify-between">
+                      {/* اللينك الأساسي قابل للنقر */}
+                      <Link
+                        href={link.path}
+                        onClick={() => setMobileMenu(false)}
+                        className="text-white font-medium py-2 px-3 rounded-full hover:bg-white/10 transition-colors w-full"
+                      >
+                        {link.name}
+                      </Link>
+
+                      {/* السهم لفتح الدروب داون */}
+                      <button
+                        onClick={() => setOpenDropdown(openDropdown === i ? null : i)}
+                        className="ml-2 text-white"
+                      >
+                        <FaChevronDown
+                          className={`${openDropdown === i ? "rotate-180" : ""} transition-transform duration-300`}
+                        />
+                      </button>
+                    </div>
+
                     <AnimatePresence>
                       {openDropdown === i && (
                         <motion.div

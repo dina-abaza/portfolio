@@ -10,13 +10,13 @@ export default function ServicesBetter() {
                     </h4>
                 </div>
 
-                <div className="mt-[20px] flex flex-col justify-start" />
+                <div className="mt-[10px] flex flex-col justify-start" />
 
                 {/* السيكشن الكبير بخلفية سوداء */}
                 <div className="w-full  bg-black flex flex-col justify-between  px-6 md:px-10 py-10 rounded-[8px]">
 
                     <div className="w-full flex flex-col justify-start">
-                        <div className="w-full  max-w-[1268px]  flex flex-col justify-between mb-[50px] px-6 md:px-10 py-10 rounded-[8px]">
+                        <div className="w-full  max-w-[1268px]  flex flex-col justify-between mb-[10px] px-6 md:px-10 py-10 rounded-[8px]">
 
                             {[
                                 { id: 1, title: "A COMPLETE TEAM", desc: "UI/UX, frontend, backend, and Flutter all in one place — we provide you with a complete journey from start to launch." },
