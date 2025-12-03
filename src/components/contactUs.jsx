@@ -170,7 +170,7 @@ export default function Com_ContactUs() {
                             type="submit"
                             disabled={loading}
                             className={`relative bg-black text-white font-medium px-6 py-3 rounded-[16px] w-full transition-all duration-300
-        ${loading ? 'opacity-70 cursor-not-allowed' : 'hover:bg-blue-600'}
+        ${loading ? 'opacity-70 cursor-not-allowed' : 'hover:bg-green-600'}
     `}
                         >
                             {loading ? (
