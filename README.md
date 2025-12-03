@@ -3,7 +3,9 @@
 
 This project is a modern, responsive company portfolio website built with Next.js, designed to showcase services, team, and projects in a professional and engaging manner.
 
+---
 ## Features
+
 
 -   **Responsive Design**: Optimized for various screen sizes, from mobile devices to large desktops.
 -   **Interactive Contact Form**: Allows visitors to send inquiries directly, with backend integration to MongoDB Atlas for data storage.
