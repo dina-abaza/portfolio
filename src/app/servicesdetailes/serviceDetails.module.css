@@ -1,101 +1,95 @@
 body {
-
-    background-color: #070707;
+  background-color: #070707;
 }
 
 .sub_body {
-    padding: 100px 0 100px 0;
+  padding: 50px 0 50px 0;
 }
-
 
 .herosection {
-    display: flex;
-    gap : 100px;
-    height: 554px;
-    width: 100%;
-    align-items: center;
-    justify-content: center;    
+  display: flex; /* الافتراضي: أفقي (لشاشات > 1124px) */
+  gap: 100px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
-.texthoc{
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+.texthoc {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
-.texthoc h1{
-    font-size: 36px;
-    font-weight: 900;
-    background: linear-gradient(90deg, #B8FF00, #10A700);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
+.texthoc h1 {
+  font-size: 36px;
+  font-weight: 900;
+  background: linear-gradient(90deg, #B8FF00, #10A700);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
 }
-.texthoc h4{
-    font-size: 24px;
-    font-weight: 600;
-
+.texthoc h4 {
+  font-size: 24px;
+  font-weight: 600;
 }
-.buttons{
-    display: flex;
-    flex-direction: row;
-    gap: 32px;
-}
-
-.imghoc img{
-    width: 674px;
-    height: 400px;
-    border-radius: 16px;
-    object-fit: cover;
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
 }
 
-.whitesection{
-    width: 100%;
-    height: 224px;
-    background-color: #FFFFFF;
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.imghoc img {
+  width: 674px;
+  height: 400px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.whitesection {
+  width: 100%;
+  height: 224px;
+  background-color: #FFFFFF;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .whitesection p {
-    color: #121111;
-    font-size: 30px;
-    font-weight: 600;
+  color: #121111;
+  font-size: 30px; /* الحجم الافتراضي للشاشات الكبيرة */
+  font-weight: 600;
 }
 
-.whySection{
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-    align-items: center;
-    height: 464px;
-    width: 1268px;
-    margin-top: 100px;
-    gap: 72px;
+.whySection {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  margin-top: 100px;
+  gap: 72px;
 }
 
-.whySection h1{
-    font-size: 24px;
-    font-weight: 700;
+.whySection h1 {
+  font-size: 24px;
+  font-weight: 700;
 }
 
-.card{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-    padding: 0 32px ;
-    background-color: #FFFFFF;
-    width: 371px;
-    height: 154px;
-    border-radius: 16px;
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  padding: 0 32px;
+  background-color: #FFFFFF;
+  width: 371px;
+  height: 154px;
+  border-radius: 16px;
 }
 
-.whyCards{
+.whyCards {
   display: flex;
   flex-wrap: wrap;
   gap: 44px;
@@ -103,263 +97,240 @@ body {
   justify-content: center;
 }
 
-.card img{
-    width: 72px;
-    height: 88px;
+.card img {
+  width: 72px;
+  height: 88px;
 }
 
-.card h4{
-    font-size: 20px;
-    color: #121111;
+.card h4 {
+  font-size: 20px;
+  color: #121111;
 }
 
-.ourProcess{
-    width: 100%;
-    /* height: 922px; */
-    background-color: #fff;
-    margin-top: 100px;
-    padding: 72px 238px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.ourProcess {
+  width: 100%;
+  /* height: 922px; */
+  background-color: #fff;
+  margin-top: 100px;
+  padding: 72px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.ourProcess h1{
-    font-size: 24px;
-    font-weight: 700;
-    color: #000;
-
+.ourProcess h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000;
 }
-.processCards{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-    margin: 32px;
-    justify-content: center;
+.processCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin: 32px;
+  justify-content: center;
+  
 }
-.singlecard{
-    width: 454px;
-    height: 196px;
-    border-radius: 16px;
-    gap: 32px;
-    padding: 0 32px;
-    background-color: #000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-
+.singlecard {
+  width: 454px;
+  height: 196px;
+  border-radius: 16px;
+  gap: 32px;
+  padding: 0 32px;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
-.singlecard h2{
-    font-size: 24px;
-    font-weight: 700;
+.singlecard h2 {
+  font-size: 24px;
+  font-weight: 700;
 }
-.singlecard p{
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.technologies{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 100px 0;
-}
-.technologies h1{
-    font-size: 24px;
-    font-weight: 700;
+.singlecard p {
+  font-size: 20px;
+  font-weight: 400;
 }
 
-.mainTech{
-    display: flex;
-    flex-direction: row;
-    margin-top: 72px;
-    width: 1400px;
-    background-color: #fff;
-    border-radius: 16px;
-
+.technologies {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0;
+}
+.technologies h1 {
+  font-size: 24px;
+  font-weight: 700;
 }
 
-.content{
-    display: flex;
-    flex-direction: row;
-    justify-self: start;
-    align-items: center;
-    padding: 36px;
+.mainTech {
+  display: flex;
+  flex-direction: row;
+  margin-top: 72px;
+  width: 100%;
+  max-width: 1400px;
+  background-color: #fff;
+  border-radius: 16px;
+  /* تأكد من توسيط الكتلة نفسها */
+  align-self: center; 
 }
 
-.content img{
-    width: 206px;
-    
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; /* مهم: يبدأ المحتوى من اليسار */
+  align-items: center;
+  padding: 36px;
+  width: 100%; /* مهم: لاستيعاب المحتوى بالكامل */
 }
 
-.sidecontent{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    gap: 24px;
-    margin-left: 32px;
-
-}
-.titleshub{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 16px;
-    align-items: center;
-}
-.titles{
-    padding: 10px;
-    border-color: #000;
-    border-width: 1px;
-    border-radius: 16px;
-    height: 50px;
-}
-.titles h2{
-    font-size: 20px;
-    font-weight: 600;
-    text-align: center;
-    color: #000;
+.content img {
+  width: 150px; /* يمكن تعديله حسب الحاجة */
+  max-width: 206px; 
+  height: auto;
+  margin-right: 20px; 
 }
 
-.icons{
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-
+.sidecontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; /* مهم: يبدأ النص من اليسار */
+  gap: 24px;
+  width: 100%;
 }
 
-.icons img{
-    width: 60px;
+.titleshub {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+.titles {
+  padding: 10px;
+  border-color: #000;
+  border-width: 1px;
+  border-radius: 16px;
+  height: 50px;
+}
+.titles h2 {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: #000;
 }
 
-.buttonsFot{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 32px;
+.icons {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
 
+.icons img {
+  width: 60px;
+}
+
+.buttonsFot {
+  display: flex;
+  justify-content: center;
 }
 
 
 /* =======================
-   📱 MOBILE RESPONSIVE
-   ======================= */
+💻 LARGE TABLET / SMALL LAPTOP RESPONSIVE (1125px to 1450px)
+======================= */
 @media (max-width: 1450px) {
-
+  /* 📌 تحجيم المكونات مع الحفاظ على التخطيط الأفقي */
   .herosection {
-    flex-direction: column-reverse;
-    gap: 48px;
-    height: auto;
-    padding: 0 20px;
-    text-align: center;
-  }
-
-  .texthoc {
-    align-items: center;
-    gap: 24px;
+    gap: 50px; /* تقليل الفجوة */
+    padding: 0 40px;
   }
 
   .texthoc h1 {
-    font-size: 22px;
-    line-height: 1.4;
+    font-size: 30px;
   }
 
   .texthoc h4 {
-    font-size: 16px;
-    font-weight: 500;
-  }
-
-  .buttons {
-    flex-direction: column;
-    gap: 16px;
-    width: 100%;
-    align-items: center;
+    font-size: 20px;
   }
 
   .imghoc img {
-    max-width: 340px;
-    border-radius: 12px;
-  }
-
-  .whitesection {
-    height: auto;
-    padding: 40px 20px;
+    width: 100%;
+    max-width: 400px; /* ضمان عدم الاقتطاع في النطاق المتوسط */
   }
 
   .whitesection p {
-    font-size: 18px;
-    line-height: 1.5;
+    font-size: 26px; /* تصغير الخط قليلاً لهذا النطاق */
   }
 
   /* WHY section */
-.whySection {
-  width: 90%;
-  margin-top: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  box-sizing: border-box;
-}
-.whySection h1 {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-/* cards: two per row on mobile (calc with gap) */
-.whyCards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  justify-content: center;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 4px;
-}
-.whySection h1{
+  .whySection {
+    width: 90%;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .whySection h1 {
+    margin: 0;
     font-size: 14px;
     font-weight: 700;
-}
+  }
 
-.card {
-  background-color: #fff;
-  color: #121111;
-  width: calc(50% - 14px);
-  min-width: 140px;
-  border-radius: 14px;
-  padding: 12px;
-  box-sizing: border-box;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  text-align: center;
-  height: auto;
-}
+  /* cards: two per row on mobile (calc with gap) */
+  .whyCards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4px;
+  }
+  .whySection h1 {
+    font-size: 14px;
+    font-weight: 700;
+  }
 
-/* make icon above text in card */
-.card img {
-  width: 46px;
-  height: 46px;
-  object-fit: contain;
-  margin-bottom: 8px;
-}
-.card h4 {
-  margin: 0;
-  font-size: 13px;
-  font-weight: 600;
-}
-.ourProcess {
+  .card {
+    background-color: #fff;
+    color: #121111;
+    width: calc(50% - 14px);
+    min-width: 140px;
+    border-radius: 14px;
+    padding: 12px;
+    box-sizing: border-box;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+  }
+
+  /* make icon above text in card */
+  .card img {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    margin-bottom: 8px;
+  }
+  .card h4 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .ourProcess {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 48px 20px;
-  
-}
+  }
 
   .ourProcess h1 {
     font-size: 18px;
@@ -367,13 +338,13 @@ body {
     text-align: center;
   }
 
-.processCards{
+  .processCards {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 3px;
     margin: 16px;
-}
+  }
 
   .singlecard {
     width: 200px;
@@ -422,8 +393,6 @@ body {
     flex-direction: row;
     /* flex-wrap: wrap; */
     gap: 8px;
-    
-    justify-content: start;
   }
 
   .titles {
@@ -441,7 +410,7 @@ body {
 
   .icons {
     flex-wrap: wrap;
-    justify-content: center;
+
     gap: 20px;
   }
 
@@ -456,7 +425,124 @@ body {
   }
 }
 
-/* Optional: for very small phones */
+
+/* =======================
+💻 TABLET PORTRAIT / VERTICAL BREAKPOINT (<= 1124px) - النقطة الجديدة للتحويل العمودي
+======================= */
+@media (max-width: 1124px) {
+
+  /* HERO SECTION - التحويل إلى التخطيط العمودي */
+  .herosection {
+    flex-direction: column-reverse; /* التخطيط عمودي حسب طلبك */
+    gap: 48px;
+    height: auto;
+    padding: 40px 20px; /* زيادة Padding لراحة المحتوى */
+    text-align: center;
+  }
+
+  .texthoc {
+    align-items: center;
+    gap: 24px;
+  }
+
+  .texthoc h1 {
+    font-size: 26px;
+    line-height: 1.4;
+  }
+
+  .texthoc h4 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .imghoc img {
+    max-width: 400px;
+    border-radius: 12px;
+  }
+
+  /* **التعديل الجديد لـ .whitesection** */
+  .whitesection p {
+    font-size: 22px; /* تقليل حجم الخط في هذا النطاق */
+    padding: 0 10px;
+  }
+
+  /* لضمان تطبيق تنسيقات 1450px على المكونات الأخرى بشكل صحيح */
+  .whyCards {
+    width: 90%;
+  }
+}
+
+
+/* =======================
+📱 MOBILE RESPONSIVE (<= 768px)
+======================= */
+@media (max-width: 768px) {
+
+  .texthoc h1 {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  .texthoc h4 {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .imghoc img {
+    max-width: 340px; /* تقليل حجم الصورة أكثر للموبايل */
+    border-radius: 12px;
+  }
+
+  .whitesection {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .whitesection p {
+    font-size: 16px; /* تقليل حجم الخط ليناسب شاشات الموبايل */
+    line-height: 1.5;
+  }
+
+  /* WHY section - تعديلات لـ 768px وأصغر */
+  .card {
+    width: calc(50% - 14px); /* لتبقى بطاقتين في الصف */
+    min-width: 140px;
+    border-radius: 14px;
+    padding: 12px;
+    /* ... باقي تنسيقات الكارد ... */
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* **يوسّط العنصر الأب** */
+    gap: 16px;
+  }
+  .content img {
+    margin-right: 0;
+  }
+  .sidecontent {
+    align-items: center; /* **يوسّط محتوى sidecontent** */
+    text-align: center;
+  }
+  .titleshub {
+    justify-content: center; /* **يوسّط الأزرار/العناوين داخل titleshub (موبايل فقط)** */
+  }
+  .icons {
+    justify-content: center; /* يوسّط الأيقونات */
+  }
+
+}
+
+
+/* Optional: for very small phones (max-width: 480px) */
 @media (max-width: 480px) {
   .texthoc h1 {
     font-size: 20px;
@@ -467,7 +553,7 @@ body {
   }
 
   .whitesection p {
-    font-size: 16px;
+    font-size: 14px; /* حجم أصغر جدًا للهواتف الصغيرة */
   }
 
   .singlecard h2 {
@@ -477,4 +563,7 @@ body {
   .singlecard p {
     font-size: 13px;
   }
+}
+.content img {
+  margin-right: 0;
 }

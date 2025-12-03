@@ -67,12 +67,12 @@ export default function FilterSection({ filters, items, activeFilter, setActiveF
 
         <div className="flex justify-center">
           <div className="w-full lg:mx-6">
-            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-[20px] p-[20px] lg:gap-x-[44px] lg:gap-y-[44px] lg:p-0 justify-center">
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-[20px] p-[20px] lg:gap-x-[44px] lg:gap-y-[44px] lg:p-0 items-center">
               {filteredItems.map((item) => (
                 <article
                   key={item.id}
                   onClick={() => onCardClick(item)}
-                  className="cursor-pointer group relative overflow-hidden rounded-[12px] shadow-lg transform transition-transform duration-500 hover:scale-[1.04]"
+                  className=" cursor-pointer group relative overflow-hidden rounded-[12px] shadow-lg transform transition-transform duration-500 hover:scale-[1.04]"
                   style={{ height: "240px" }}
                 >
                   <Image
