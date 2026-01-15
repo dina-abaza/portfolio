@@ -1,6 +1,7 @@
 import Script from 'next/script';
 
 function GoogleAnalytics({ trackingId }) {
+    console.log("Google Analytics Tracking ID:", trackingId);
   return (
     <>
       {trackingId && (
