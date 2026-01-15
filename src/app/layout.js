@@ -22,11 +22,12 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+        <head>
+        <GoogleAnalytics trackingId={GA_TRACKING_ID} />
+        </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <GoogleAnalytics trackingId={GA_TRACKING_ID} />
-
         {children}
       </body>
     </html>

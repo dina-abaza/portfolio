@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MotionWrapper from "@/components/Animations/MotionWrapper";
 import LenisScroll from "@/components/Animations/LenisScroll";
-
+import GoogleAnalytics from "../components/googleAnalytics"
 // app/layout.js
 export const metadata = {
   title: "Aurora Software House | Web & Mobile Development",
@@ -54,8 +54,12 @@ export const metadata = {
 
 
 export default function RootLayout({ children }) {
+        const GA_TRACKING_ID = process.env.GA_TRACKING_ID;
   return (
     <html lang="en">
+        <head>
+        <GoogleAnalytics trackingId={GA_TRACKING_ID} />
+        </head>
       <body className="bg-black text-white flex flex-col min-h-screen">
         {/* ✅ استدعاء مكتبة التمرير السلس */}
         <LenisScroll />
