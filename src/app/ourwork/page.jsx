@@ -26,6 +26,7 @@ export default function ProjectsPage() {
     { id: 7, category: "website", title: "Hotel Booking App", description: "A simple and intuitive platform for browsing hotels and making reservations", image: "/travel5.jpeg" },
     { id: 8, category: "website", title: "Vitrin", description: "A modern online store for browsing and purchasing furniture", image: "/vitrin8.png" },
     { id: 9, category: "website", title: "Restaurant Booking", description: "A seamless platform for table booking and menu browsing", image: "/restaurant7.png" },
+    { id: 10, category: "website", title: "gift shopping", description: "A gift e-commerce website featuring an integrated admin dashboard for managing products, orders, and promotions.", image: "/gift5.png" },
 
     
 
