@@ -11,6 +11,9 @@ import {
   FaFigma,
   FaUsers,
   FaClock,
+  FaGoogle,
+  FaGift,
+  FaChartPie
   } from "react-icons/fa";
   
   export const ourworkData = [
@@ -21,7 +24,7 @@ import {
   description: "Confidence Starts with Your Outfit",
   subImages: ["/viora1.png", "/viora2.png", "/viora3.png"],
   members: 2,
-  time: "2 Weeks",
+  time: "15 days",
   problem: "Shoppers struggled to find a unified place to explore trends, discover outfits, and shop instantly without switching between multiple platforms.",
   solution: "We created an all-in-one fashion app that provides trend updates, outfit inspiration, and fast in-app shopping with a smooth and elegant user experience.",
   keyFeatures: [
@@ -55,8 +58,8 @@ import {
   category: "design",
   description: "Pet care at your fingertips",
   subImages: ["/pawsh1.png", "/pawsh2.png", "/pawsh4.png"],
-  members: 1,
-  time: "1 Month",
+  members: 2,
+  time: "50 days",
   problem: "Pet owners face daily challenges in managing their pets’ health, supplies, and access to reliable veterinary services. Users consistently struggle with difficulty finding trusted veterinary support, lack of centralized information about pet health and nutrition, higher online prices, and no reliable system for reminders or community support.",
   solution: "We created an all-in-one pet care ecosystem with a Health Management Hub, Vet Access, Smart Pet Shop, Pet Services Marketplace, and a Pet Owner Community, providing a personalized experience for cats, dogs, and birds.",
   keyFeatures: [
@@ -78,8 +81,8 @@ import {
   description: "Down Center platform with a fully integrated admin dashboard",
   demoLink: "https://down-syndrome-one.vercel.app/",
   subImages: ["/dashboard1.png", "/dawn2.png", "/dawn6.png"],
-  members: 2,
-  time: "1 month",
+  members: 3,
+  time: "30 days",
   problem: "Users needed a centralized platform to manage data, respond to parent inquiries, and allow reservations efficiently.",
   solution: "We built a responsive website with a complete dashboard integrating analytics, progress tracking, Chat AI for instant replies, fast reservations for venue and restaurant, and an email subscription feature to get latest updates.",
   keyFeatures: [
@@ -99,8 +102,8 @@ import {
   category: "design",
   description: "Good food lives here",
   subImages: ["/food1.png", "/food2.png", "/food3.png"],
-  members: 1,
-  time: "1 Month",
+  members: 2,
+  time: "30 days",
   problem: "Ordering food should be fast, simple, and reliable, but existing apps are slow, confusing, and lack personalization.",
   solution: "Food Zone provides fast, intuitive food ordering with real-time tracking, personalized recommendations, and smart UX for both users and restaurants.",
   keyFeatures: [
@@ -121,7 +124,7 @@ import {
   category: "application",
   description: "Your World of Movies & Series",
   subImages: ["/cinon2.png", "/cinon3.png", "/cinon4.png"],
-  members: 1,
+  members: 2,
   time: "20 days",
   problem: "Users didn’t have a personalized, easy-to-navigate app combining movies and series recommendations with seamless streaming.",
   solution: "We built a cinematic streaming app with smart recommendations, curated categories, and a clean interface.",
@@ -140,7 +143,7 @@ import {
   demoLink: "https://booking-hotels-ue7g.vercel.app/",
   subImages: ["/travel4.png", "/travel5.jpeg", "/travel1.png"],
   members: 2,
-  time: "3 Weeks",
+  time: "10 days",
   problem: "Users needed a reliable platform to search, filter, book hotels, and pay easily.",
   solution: "We created a responsive hotel booking website with search, filters, smooth booking, and Stripe payments for quick checkout.",
   keyFeatures: [
@@ -157,8 +160,8 @@ import {
   description: "A modern online store for browsing and purchasing furniture",
   demoLink: "http://e-commece-vitrine-jm7x.vercel.app",
   subImages: ["/vitrin1.png", "/vitrin3.jpeg", "/vitrin5.png"],
-  members: 2,
-  time: "40 days",
+  members: 3,
+  time: "20 days",
   problem: "Users needed an intuitive e-commerce platform to browse furniture and complete purchases easily.",
   solution: "We built a modern online store with admin control, UX research, Stripe payments, and product filtering.",
   keyFeatures: [
@@ -187,4 +190,22 @@ import {
   ],
   technologies: ["React", "Tailwind CSS", "Zustand", "Axios", "Laravel", "MySQL"],
   },
+  {
+  id: "10",
+  title: "gift shopping",
+  category: "website",
+  description: "An integrated e-commerce platform for luxury gifts featuring a seamless shopping experience and a powerful admin control panel.",
+  demoLink: "http://grocy-web.vercel.app",
+  subImages: ["/gift4.png", "/gift2.png", "/gift1.png"],
+  members: 3,
+  time: "7 days",
+  problem: "Finding the perfect gift and coordinating its delivery and packaging is often a time-consuming and fragmented process, while store owners struggle to manage custom orders and real-time inventory manually.",
+  solution: "A comprehensive digital platform that offers a curated gifting experience with full customization, backed by an advanced dashboard to streamline order management, inventory tracking, and business analytics.",
+ keyFeatures: [
+  { icon: <FaGoogle />, text: "Google Authentication" }, // تسجيل دخول آمن
+  { icon: <FaGift />, text: "Gift Customization" },      // تخصيص الهدايا
+  { icon: <FaChartPie />, text: "Admin Dashboard" },     // لوحة تحكم إدارية
+ ],
+  technologies: ["next.js", "Tailwind CSS", "Zustand", "Axios", "node.js", "MongoDB","Framer-Motion","swiper"],
+  }
   ];
