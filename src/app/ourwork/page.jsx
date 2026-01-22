@@ -23,8 +23,8 @@ export default function ProjectsPage() {
     { id: 4, category: "website", title: "Center-dawn &Dashboard", description: "Down Center platform with a fully integrated admin dashboard", image: "/dawn4.jpeg" },
     { id: 5, category: "design", title: "food-zone", description: "goog food lives here", image: "/food4.png" },
     { id: 6, category: "application", title: "Cinon Films", description: "Your World of Movies & Series", image: "/cinon1.png" },
-    { id: 7, category: "website", title: "Hotel Booking App", description: "A simple and intuitive platform for browsing hotels and making reservations", image: "/travel5.jpeg" },
-    { id: 8, category: "website", title: "Vitrin", description: "A modern online store for browsing and purchasing furniture", image: "/vitrin8.png" },
+    { id: 7, category: "website", title: "Hotel Booking App", description: "A simple and intuitive platform for browsing hotels and making reservations", image: "/tourism.png" },
+    { id: 8, category: "website", title: "Vitrin", description: "A modern online store for browsing and purchasing furniture", image: "/vitriin.png" },
     { id: 9, category: "website", title: "Restaurant Booking", description: "A seamless platform for table booking and menu browsing", image: "/restaurant7.png" },
     { id: 10, category: "website", title: "gift shopping", description: "A gift e-commerce website featuring an integrated admin dashboard for managing products, orders, and promotions.", image: "/gift5.png" },
 
