@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
         <head>
 {/* <!-- نسخة SVG --> */}
-{/* <link rel="icon" href="/logo/aurora.svg" sizes="32x32" type="image/svg+xml" /> */}
+<link rel="icon" href="/logo/aurora-32.svg" sizes="32x32" type="image/svg+xml" />
 
 {/* <!-- نسخ PNG لأحجام مختلفة --> */}
 {/* <link rel="icon" type="image/png" sizes="16x16" href="/logo/aurora-16.png" /> */}
@@ -67,7 +67,7 @@ export default function RootLayout({ children }) {
 {/* <link rel="icon" type="image/png" sizes="48x48" href="/logo/aurora-48.png" /> */}
 {/* <link rel="icon" type="image/png" sizes="64x64" href="/logo/aurora-64.png" /> */}
 {/* <link rel="icon" type="image/png" sizes="128x128" href="/logo/aurora-128.png" /> */}
-<link rel="icon" type="image/png" sizes="256x256" href="/logo/aurora-256.png" />
+{/* <link rel="icon" type="image/png" sizes="256x256" href="/logo/aurora-256.png" /> */}
 
         <GoogleAnalytics trackingId={GA_TRACKING_ID} />
         </head>
