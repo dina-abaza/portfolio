@@ -26,7 +26,7 @@ export default function Footer() {
                   "https://www.facebook.com/profile.php?id=61583612949472&mibextid=wwXIfr&rdid=eYnoLCPQebDQBjbB&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F14PwV9Dofjs%2F%3Fmibextid%3DwwXIfr#",
                   "https://www.instagram.com/aurorasoftwarehouse/?igsh=eDkwMWFqeHk5d2pm#",
                   "https://www.linkedin.com/company/aurora-softwarehouse/",
-                  "https://wa.me/201010871431",
+                  "https://wa.me/201124885991",
                   "https://github.com/aurorasoftwarehouse"
                 ];
                 return (
@@ -82,7 +82,7 @@ export default function Footer() {
         {/* العمود 4 - Contact */}
         <div>
           <h3 className="text-lg font-semibold mb-6">Contact</h3>
-          <p className="text-[#8C8C8C] mb-2 text-sm">Phone: 01010871431</p>
+          <p className="text-[#8C8C8C] mb-2 text-sm">Phone: 01124885991</p>
           <p className="text-[#8C8C8C] text-sm normal-case">Email: aurorasoftwarehouse@gmail.com</p>
         </div>
       </div>
