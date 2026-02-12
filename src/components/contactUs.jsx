@@ -221,7 +221,7 @@ export default function Com_ContactUs() {
                                 />
                                 <span className="font-bold">Phone number</span>
                             </div>
-                            <p className="text-[#424242] text-[16px]">+20 101 087 1431</p>
+                            <p className="text-[#424242] text-[16px]">+20 112 488 5991</p>
                         </div>
 
                         {/* الموقع */}
