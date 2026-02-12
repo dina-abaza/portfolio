@@ -245,7 +245,7 @@ export default function Com_ContactUs() {
                                         "https://www.linkedin.com/company/aurora-softwarehouse/",
                                         "https://www.facebook.com/profile.php?id=61583612949472&mibextid=wwXIfr&rdid=eYnoLCPQebDQBjbB&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F14PwV9Dofjs%2F%3Fmibextid%3DwwXIfr#",
                                         "https://www.instagram.com/aurorasoftwarehouse/?igsh=eDkwMWFqeHk5d2pm#",
-                                        "https://wa.me/201010871431",
+                                        "https://wa.me/201124885991",
                                         "https://github.com/aurorasoftwarehouse"
                                     ];
                                     return (
