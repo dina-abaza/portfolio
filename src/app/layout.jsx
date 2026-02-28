@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
         <head>
 {/* <!-- نسخة SVG --> */}
-<link rel="icon" href="/logo/image.png" sizes="32x32" type="image/png" />
+<link rel="icon" href="/logo/logo.svg" sizes="32x32" type="image/svg+xml" />
 
 {/* <!-- نسخ PNG لأحجام مختلفة --> */}
 {/* <link rel="icon" type="image/png" sizes="16x16" href="/logo/aurora-16.png" /> */}
