@@ -27,9 +27,7 @@ export default function ProjectsPage() {
     { id: 8, category: "website", title: "Vitrin", description: "A modern online store for browsing and purchasing furniture", image: "/vitriin.png" },
     { id: 9, category: "website", title: "Restaurant Booking", description: "A seamless platform for table booking and menu browsing", image: "/restaurant7.png" },
     { id: 10, category: "website", title: "gift shopping", description: "A gift e-commerce website featuring an integrated admin dashboard for managing products, orders, and promotions.", image: "/gift5.png" },
-
-    
-
+    { id: 11, category: "application", title: "SwiftStock", description: "Multi-user warehouse management with sales, expenses, stock analytics, profit calculations and low-stock alerts.", image: "/swiftStockImg/Gemini_Generated_Image_mk07iomk07iomk07.png" },
   ];
 
   return (

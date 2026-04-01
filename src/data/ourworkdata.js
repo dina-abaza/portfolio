@@ -207,5 +207,31 @@ import {
   { icon: <FaChartPie />, text: "Admin Dashboard" },     // لوحة تحكم إدارية
  ],
   technologies: ["next.js", "Tailwind CSS", "Zustand", "Axios", "node.js", "MongoDB","Framer-Motion","swiper"],
+  },
+  {
+    id: "11",
+    title: "SwiftStock Warehouse Management",
+    category: "application",
+    description: "Multi-user inventory system with sales, expenses, analytics, profit calculation, and low-stock alerts.",
+    demoLink: "https://warehouse-management-system-for-an-sooty.vercel.app/",
+    subImages: [
+      "/swiftStockImg/Gemini_Generated_Image_tqhncktqhncktqhn.png",
+      "/swiftStockImg/Gemini_Generated_Image_eh61yaeh61yaeh61.png",
+      "/swiftStockImg/Realistic Mockup.jpg"
+    ],
+    members: 4,
+    time: "45 days",
+    problem: "Companies needed a real-time warehouse system to track inventory, control costs, manage multi-user roles, and avoid stockouts.",
+    solution: "Built a full-featured platform with inventory, sales, expense tracking, analytics dashboards, profit reports, and low-stock alerts for proactive replenishment.",
+    keyFeatures: [
+      { icon: <FaChartLine />, text: "Real-time Inventory Tracking" },
+      { icon: <FaUsers />, text: "Multi-user Role Management" },
+      { icon: <FaTools />, text: "Sales & Expenses Modules" },
+      { icon: <FaLeaf />, text: "Profit Calculation & Analytics" },
+      { icon: <FaClock />, text: "Low Stock Alerts" }
+    ],
+    technologies: [
+      "React", "Next.js", "Tailwind CSS", "Zustand", "Node.js", "Express.js", "MongoDB", "Chart.js"
+    ]
   }
   ];
