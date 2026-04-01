@@ -211,9 +211,9 @@ import {
   {
     id: "11",
     title: "SwiftStock Warehouse Management",
-    category: "application",
+    category: "website",
     description: "Multi-user inventory system with sales, expenses, analytics, profit calculation, and low-stock alerts.",
-    demoLink: "https://warehouse-management-system-for-an-sooty.vercel.app/",
+    demoLink: "https://warehouse-management-system-for-an-sooty.vercel.app",
     subImages: [
       "/swiftStockImg/Gemini_Generated_Image_tqhncktqhncktqhn.png",
       "/swiftStockImg/Gemini_Generated_Image_eh61yaeh61yaeh61.png",
@@ -231,7 +231,7 @@ import {
       { icon: <FaClock />, text: "Low Stock Alerts" }
     ],
     technologies: [
-      "React", "Next.js", "Tailwind CSS", "Zustand", "Node.js", "Express.js", "MongoDB", "Chart.js"
+      "React", "Next.js", "Tailwind CSS", "redux toolkit", "Node.js", "Express.js", "MongoDB", "Chart.js"
     ]
   }
   ];
