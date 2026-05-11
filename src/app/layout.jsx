@@ -35,7 +35,7 @@ export const metadata = {
     siteName: "Aurora Software House",
     images: [
       {
-        url: "/Black.png", 
+        url: "/Black.webp", 
         width: 1200,
         height: 630,
       },
@@ -48,7 +48,7 @@ export const metadata = {
     title: "Aurora Software House",
     description:
       "Complete web and mobile solutions including responsive websites, mobile apps, and UI/UX design for businesses and startups.",
-    images: ["/Black.png"],
+    images: ["/Black.webp"],
   },
 };
 

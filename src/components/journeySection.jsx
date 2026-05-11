@@ -41,7 +41,7 @@ export default function JourneySection() {
       {/* الخلفية */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/imghome5.png"
+          src="/imghome5.webp"
           alt="Journey Background"
           fill
           className="object-cover"

@@ -19,7 +19,7 @@ const Com_AboutPage = () => {
 
                         <div className="w-32 h-32 sm:w-[198px] sm:h-[198px] rounded-full p-[4px] bg-gradient-to-r from-[#10A700] to-[#B8FF00]">
                             <div className="w-full h-full rounded-full overflow-hidden border-[#10A700] bg-black">
-                                <img src="/team_photos/Ellipse 8-1.png" className="object-cover w-full h-full" />
+                                <img src="/team_photos/Ellipse 8-1.webp" className="object-cover w-full h-full" />
                             </div>
                         </div>
 
@@ -32,7 +32,7 @@ const Com_AboutPage = () => {
                         <div className="p-[3px] rounded-full bg-gradient-to-r from-[#10A700] to-[#B8FF00]">
                             <div className="flex justify-center items-center rounded-full bg-white border-[#10A700] w-32 h-32 sm:w-[198px] sm:h-[198px] overflow-hidden">
                                 <img
-                                    src="/team_photos/WhatsApp Image 2025-10-23 at 18.01.30_f7cf8215.jpg"
+                                    src="/team_photos/WhatsApp Image 2025-10-23 at 18.01.30_f7cf8215.webp"
                                     alt="Dina Abaza"
                                     className="object-contain sm:w-full sm:h-full sm:mt-[10px] w-[100px]"
                                 />
@@ -49,7 +49,7 @@ const Com_AboutPage = () => {
 
                         <div className="p-[3px] rounded-full bg-gradient-to-r from-[#10A700] to-[#B8FF00]">
                             <div className="flex justify-center items-center rounded-full border-2 w-32 h-32 border-[#10A700] sm:w-[198px] sm:h-[198px] overflow-hidden">
-                                <img src="/team_photos/Ellipse 8-4.png" alt="Youssef Tame" className="object-cover w-full h-full" />
+                                <img src="/team_photos/Ellipse 8-4.webp" alt="Youssef Tame" className="object-cover w-full h-full" />
                             </div>
                         </div>
                         <p className="mt-4 text-lg font-semibold text-center">Yussef Taie </p>
@@ -62,7 +62,7 @@ const Com_AboutPage = () => {
                         <div className="flex flex-col items-center">
                             <div className="p-[2px] rounded-full bg-gradient-to-r from-[#10A700] to-[#B8FF00]">
                                 <div className="flex justify-center items-center rounded-full border-2 border-[#10A700] w-32 h-32 sm:w-[198px] sm:h-[198px] overflow-hidden">
-                                    <img src="/team_photos/Ellipse 8-3.png" alt="Ramadan Mahdy" className="object-cover w-full h-full" />
+                                    <img src="/team_photos/Ellipse 8-3.webp" alt="Ramadan Mahdy" className="object-cover w-full h-full" />
                                 </div>
                             </div>
                             <p className="mt-4 text-lg font-semibold text-center">RAMADAN MAHDY</p>
@@ -73,7 +73,7 @@ const Com_AboutPage = () => {
                         <div className="flex flex-col hidden sm:block items-center">
                             <div className="p-[2px] rounded-full bg-gradient-to-r from-[#10A700] to-[#B8FF00]">
                                 <div className="flex justify-center items-center rounded-full border-2 bg-[#fff] border-[#10A700] w-32 h-32 sm:w-[198px] sm:h-[198px] overflow-hidden">
-                                    <img src="/team_photos/Ellipse 8-2.png" alt="Ahmed Saber" className="object-contain mt-10 object-[0%_100%] w-[160px] " />
+                                    <img src="/team_photos/Ellipse 8-2.webp" alt="Ahmed Saber" className="object-contain mt-10 object-[0%_100%] w-[160px] " />
                                 </div>
                             </div>
                             <p className="mt-4 text-lg text-center font-semibold">AHMED SABER</p>
@@ -84,7 +84,7 @@ const Com_AboutPage = () => {
                     <div className="flex flex-col block sm:hidden col-span-2 items-center justify-center">
                         <div className="p-[2px] rounded-full bg-gradient-to-r from-[#10A700] to-[#B8FF00]">
                             <div className="flex justify-center items-center rounded-full border-2 border-[#10A700] bg-[#fff] w-32 h-32 sm:w-[198px] sm:h-[198px] overflow-hidden">
-                                <img src="/team_photos/Ellipse 8-2.png" alt="Ahmed Saber" className="object-contain mt-10 object-[0%_100%] w-[95px]" />
+                                <img src="/team_photos/Ellipse 8-2.webp" alt="Ahmed Saber" className="object-contain mt-10 object-[0%_100%] w-[95px]" />
                             </div>
                         </div>
                         <p className="mt-4 text-lg sm:ml-20 font-semibold">AHMED SABER</p>

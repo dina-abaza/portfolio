@@ -73,7 +73,7 @@ export default function FilterSection({ filters, items, activeFilter, setActiveF
                   key={item.id}
                   onClick={() => onCardClick(item)}
                   className=" cursor-pointer group relative overflow-hidden rounded-[12px] shadow-lg transform transition-transform duration-500 hover:scale-[1.04]"
-                  style={{ height: "240px" }}
+                  style={{ height: "280px" }}
                 >
                   <Image
                     src={item.image}

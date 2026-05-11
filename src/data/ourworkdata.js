@@ -13,7 +13,11 @@ import {
   FaClock,
   FaGoogle,
   FaGift,
-  FaChartPie
+  FaChartPie,
+  FaBook,
+  FaShieldAlt,
+  FaShoppingCart,
+  FaRobot
   } from "react-icons/fa";
   
   export const ourworkData = [
@@ -22,7 +26,7 @@ import {
   title: "Viora",
   category: "application",
   description: "Confidence Starts with Your Outfit",
-  subImages: ["/viora1.png", "/viora2.png", "/viora3.png"],
+  subImages: ["/viora1.webp", "/viora2.webp", "/viora3.webp"],
   members: 2,
   time: "15 days",
   problem: "Shoppers struggled to find a unified place to explore trends, discover outfits, and shop instantly without switching between multiple platforms.",
@@ -40,7 +44,7 @@ import {
   category: "website",
   description: "A clean, engaging page that highlights the company’s services and identity",
   demoLink: "https://landing-page-theta-sable.vercel.app",
-  subImages: ["/landing2.png", "/landing3.png", "/landing4.png"],
+  subImages: ["/landing2.webp", "/landing3.webp", "/landing4.webp"],
   members: 2,
   time: "2 days",
   problem: "Clients needed a visually appealing landing page to quickly convey their brand and services online.",
@@ -57,7 +61,7 @@ import {
   title: "Pawsh Pet",
   category: "design",
   description: "Pet care at your fingertips",
-  subImages: ["/pawsh1.png", "/pawsh2.png", "/pawsh4.png"],
+  subImages: ["/pawsh1.webp", "/pawsh2.webp", "/pawsh4.webp"],
   members: 2,
   time: "50 days",
   problem: "Pet owners face daily challenges in managing their pets’ health, supplies, and access to reliable veterinary services. Users consistently struggle with difficulty finding trusted veterinary support, lack of centralized information about pet health and nutrition, higher online prices, and no reliable system for reminders or community support.",
@@ -80,7 +84,7 @@ import {
   category: "website",
   description: "Down Center platform with a fully integrated admin dashboard",
   demoLink: "https://down-syndrome-one.vercel.app/",
-  subImages: ["/dashboard1.png", "/dawn2.png", "/dawn6.png"],
+  subImages: ["/dashboard1.webp", "/dawn2.webp", "/dawn6.webp"],
   members: 3,
   time: "30 days",
   problem: "Users needed a centralized platform to manage data, respond to parent inquiries, and allow reservations efficiently.",
@@ -101,7 +105,7 @@ import {
   title: "Food Zone",
   category: "design",
   description: "Good food lives here",
-  subImages: ["/food1.png", "/food2.png", "/food3.png"],
+  subImages: ["/food1.webp", "/food2.webp", "/food3.webp"],
   members: 2,
   time: "30 days",
   problem: "Ordering food should be fast, simple, and reliable, but existing apps are slow, confusing, and lack personalization.",
@@ -123,7 +127,7 @@ import {
   title: "Cinon Films",
   category: "application",
   description: "Your World of Movies & Series",
-  subImages: ["/cinon2.png", "/cinon3.png", "/cinon4.png"],
+  subImages: ["/cinon2.webp", "/cinon3.webp", "/cinon4.webp"],
   members: 2,
   time: "20 days",
   problem: "Users didn’t have a personalized, easy-to-navigate app combining movies and series recommendations with seamless streaming.",
@@ -141,7 +145,7 @@ import {
   category: "website",
   description: "A simple and intuitive platform for browsing hotels and making reservations",
   demoLink: "https://booking-hotels-ue7g.vercel.app/",
-  subImages: ["/tourism2.png", "/tourism4.png", "/tourism3.png"],
+  subImages: ["/tourism2.webp", "/tourism4.webp", "/tourism3.webp"],
   members: 2,
   time: "10 days",
   problem: "Users needed a reliable platform to search, filter, book hotels, and pay easily.",
@@ -159,7 +163,7 @@ import {
   category: "website",
   description: "A modern online store for browsing and purchasing furniture",
   demoLink: "http://e-commece-vitrine-jm7x.vercel.app",
-  subImages: ["/vitrin1.png", "/vitriin.png", "/vitrin5.png"],
+  subImages: ["/vitrin1.webp", "/vitriin.webp", "/vitrin5.webp"],
   members: 3,
   time: "20 days",
   problem: "Users needed an intuitive e-commerce platform to browse furniture and complete purchases easily.",
@@ -178,7 +182,7 @@ import {
   category: "website",
   description: "A seamless platform for table booking and menu browsing",
   demoLink: "http://food-corner-roan.vercel.app",
-  subImages: ["/restaurant2.png", "/restaurant3.png", "/restaurant4.png"],
+  subImages: ["/restaurant2.webp", "/restaurant3.webp", "/restaurant4.webp"],
   members: 2,
   time: "20 days",
   problem: "Customers face difficulty in reserving tables, checking menus, and receiving confirmations quickly.",
@@ -196,7 +200,7 @@ import {
   category: "website",
   description: "An integrated e-commerce platform for luxury gifts featuring a seamless shopping experience and a powerful admin control panel.",
   demoLink: "http://grocy-web.vercel.app",
-  subImages: ["/gift4.png", "/gift2.png", "/gift1.png"],
+  subImages: ["/gift4.webp", "/gift2.webp", "/gift1.webp"],
   members: 3,
   time: "7 days",
   problem: "Finding the perfect gift and coordinating its delivery and packaging is often a time-consuming and fragmented process, while store owners struggle to manage custom orders and real-time inventory manually.",
@@ -215,9 +219,9 @@ import {
     description: "Multi-user inventory system with sales, expenses, analytics, profit calculation, and low-stock alerts.",
     demoLink: "https://warehouse-management-system-for-an-sooty.vercel.app",
     subImages: [
-      "/swiftStockImg/Gemini_Generated_Image_tqhncktqhncktqhn.png",
-      "/swiftStockImg/Gemini_Generated_Image_eh61yaeh61yaeh61.png",
-      "/swiftStockImg/Realistic Mockup.jpg"
+      "/swiftStockImg/Gemini_Generated_Image_tqhncktqhncktqhn.webp",
+      "/swiftStockImg/Gemini_Generated_Image_eh61yaeh61yaeh61.webp",
+      "/swiftStockImg/Realistic Mockup.webp"
     ],
     members: 4,
     time: "45 days",
@@ -233,5 +237,45 @@ import {
     technologies: [
       "React", "Next.js", "Tailwind CSS", "redux toolkit", "Node.js", "Express.js", "MongoDB", "Chart.js"
     ]
+  },
+  {
+    id: "12",
+    title: "Aldawlia Publishing",
+    category: "website",
+    description: "Digital bookstore for electronic books with advanced security and analytics.",
+    demoLink: "",
+    subImages: ["/imgpublish2.webp", "/imgpublish3.webp", "/imgpublish4.webp"],
+    members: 4,
+    time: "20 days",
+    problem: "Publishers needed a secure way to sell e-books without risk of unauthorized sharing or multiple downloads, while tracking sales with detailed analytics.",
+    solution: "Developed a secure platform with Next.js and Node.js, integrating Stripe and Paymob for payments. Implemented strict download limits and anti-sharing protection to ensure content security.",
+    keyFeatures: [
+      { icon: <FaBook />, text: "Secure E-book Sales" },
+      { icon: <FaShieldAlt />, text: "Anti-Sharing Protection" },
+      { icon: <FaChartLine />, text: "Sales Analytics Dashboard" },
+      { icon: <FaLock />, text: "Limited Download Windows" },
+      { icon: <FaUsers />, text: "User Management System" }
+    ],
+    technologies: ["Next.js", "Tailwind CSS", "Node.js", "Stripe", "Paymob", "MongoDB", "Express.js"]
+  },
+  {
+    id: "13",
+    title: "Herodex",
+    category: "website",
+    description: "Medical e-commerce for skin and hair care products with Telegram bot integration.",
+    demoLink: "https://www.herodex-pharma.com/",
+    subImages: ["/imgherodex2.webp", "/imgherodex1.webp", "/imgherodex3.webp"],
+    members: 3,
+    time: "10 days",
+    problem: "Customers needed a reliable way to buy medical cosmetic products with local and international payment options, plus instant order notifications for the team.",
+    solution: "Built a modern e-commerce site using Next.js and TypeScript, featuring Vodafone Cash and Visa payments. Integrated a Telegram bot to instantly alert the team of new orders and a dashboard for product management.",
+    keyFeatures: [
+      { icon: <FaShoppingCart />, text: "Medical Product E-shop" },
+      { icon: <FaRobot />, text: "Telegram Bot Notifications" },
+      { icon: <FaChartLine />, text: "Facebook & TikTok Pixel Integration" },
+      { icon: <FaChartPie />, text: "Product Management Dashboard" },
+      { icon: <FaMobileAlt />, text: "Vodafone Cash & Visa Integration" }
+    ],
+    technologies: ["Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Pixel Integration", "Vodafone Cash API", "MongoDB", "Telegram API"]
   }
   ];

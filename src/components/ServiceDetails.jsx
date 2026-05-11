@@ -228,7 +228,7 @@ const ServiceDetails = ({ styles }) => {
                                         return IconComponent ? (
                                             <IconComponent 
                                                 key={i} 
-                                                size={20} 
+                                                size={24} 
                                                 color={getIconColor(iconName)}
                                                 className={styles?.iconClass || "hover:opacity-80 transition-opacity"}
                                             /> 
