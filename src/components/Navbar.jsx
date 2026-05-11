@@ -45,7 +45,7 @@ export default function Navbar() {
       <div className="hidden lg:flex items-center justify-between w-full max-w-[965px] px-4 py-2 rounded-full shadow-4xl bg-black/40 backdrop-blur-md border border-white/30">
         <div className="flex-shrink-0">
           <Link href="/" onClick={() => setActive(null)}>
-            <img src="/logo/aurora.svg" alt="Aurora Logo" className="w-[130px] h-auto" />
+            <img src="/logo.webp" alt="Aurora Logo" className="w-[130px] h-auto" />
           </Link>
         </div>
 
@@ -70,7 +70,7 @@ export default function Navbar() {
       <div className="hidden md:flex lg:hidden flex-col items-center w-full px-6 py-4">
         <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
           <Link href="/">
-            <img src="/logo/aurora.svg" alt="Aurora Logo" className="w-[150px] mb-8" />
+            <img src="/logo.webp" alt="Aurora Logo" className="w-[150px] mb-8" />
           </Link>
         </motion.div>
 
@@ -99,7 +99,7 @@ export default function Navbar() {
       {/* ===== Mobile Navbar (≤767px) ===== */}
       <div className="flex md:hidden items-center justify-between w-full px-6 py-3">
         <Link href="/">
-          <img src="/logo/aurora.svg" alt="Aurora Logo" className="w-[110px]" />
+          <img src="/logo.webp" alt="Aurora Logo" className="w-[110px]" />
         </Link>
 
         <button onClick={() => setMobileMenu(!mobileMenu)} className="text-white">

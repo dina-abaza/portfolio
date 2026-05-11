@@ -7,7 +7,7 @@ body {
 }
 
 .herosection {
-  display: flex; /* الافتراضي: أفقي (لشاشات > 1124px) */
+  display: flex;
   gap: 100px;
   width: 100%;
   align-items: center;
@@ -29,10 +29,12 @@ body {
   -webkit-text-fill-color: transparent;
   margin-bottom: 20px;
 }
+
 .texthoc h4 {
   font-size: 24px;
   font-weight: 600;
 }
+
 .buttons {
   display: flex;
   flex-direction: row;
@@ -56,9 +58,10 @@ body {
   align-items: center;
   text-align: center;
 }
+
 .whitesection p {
   color: #121111;
-  font-size: 30px; /* الحجم الافتراضي للشاشات الكبيرة */
+  font-size: 30px;
   font-weight: 600;
 }
 
@@ -109,7 +112,6 @@ body {
 
 .ourProcess {
   width: 100%;
-  /* height: 922px; */
   background-color: #fff;
   margin-top: 100px;
   padding: 72px 80px;
@@ -118,19 +120,21 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .ourProcess h1 {
   font-size: 24px;
   font-weight: 700;
   color: #000;
 }
+
 .processCards {
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
   margin: 32px;
   justify-content: center;
-  
 }
+
 .singlecard {
   width: 454px;
   height: 196px;
@@ -143,10 +147,12 @@ body {
   justify-content: center;
   text-align: center;
 }
+
 .singlecard h2 {
   font-size: 24px;
   font-weight: 700;
 }
+
 .singlecard p {
   font-size: 20px;
   font-weight: 400;
@@ -159,6 +165,7 @@ body {
   align-items: center;
   margin: 100px 0;
 }
+
 .technologies h1 {
   font-size: 24px;
   font-weight: 700;
@@ -172,31 +179,33 @@ body {
   max-width: 1400px;
   background-color: #fff;
   border-radius: 16px;
-  /* تأكد من توسيط الكتلة نفسها */
-  align-self: center; 
+  align-self: center;
 }
 
+/* التعديل هنا: إضافة gap لزيادة المسافة بين الصورة والمحتوى */
 .content {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start; /* مهم: يبدأ المحتوى من اليسار */
+  justify-content: flex-start;
   align-items: center;
   padding: 36px;
-  width: 100%; /* مهم: لاستيعاب المحتوى بالكامل */
+  width: 100%;
+  gap: 60px; /* المسافة المطلوبة */
 }
 
+/* التعديل هنا: زيادة الـ margin-right */
 .content img {
-  width: 150px; /* يمكن تعديله حسب الحاجة */
-  max-width: 206px; 
+  width: 150px;
+  max-width: 206px;
   height: auto;
-  margin-right: 20px; 
+  margin-right: 20px; /* تم الإبقاء عليها مع الـ gap لتأكيد المسافة */
 }
 
 .sidecontent {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start; /* مهم: يبدأ النص من اليسار */
+  align-items: flex-start;
   gap: 24px;
   width: 100%;
 }
@@ -208,13 +217,16 @@ body {
   gap: 16px;
   align-items: center;
 }
+
 .titles {
   padding: 10px;
   border-color: #000;
   border-width: 1px;
   border-radius: 16px;
-  height: 50px;
+  height: auto; /* خليتها أوتو عشان لو النص كبير */
+  min-height: 50px;
 }
+
 .titles h2 {
   font-size: 20px;
   font-weight: 600;
@@ -237,333 +249,44 @@ body {
   justify-content: center;
 }
 
-
 /* =======================
-💻 LARGE TABLET / SMALL LAPTOP RESPONSIVE (1125px to 1450px)
+💻 RESPONSIVE STYLES
 ======================= */
+
 @media (max-width: 1450px) {
-  /* 📌 تحجيم المكونات مع الحفاظ على التخطيط الأفقي */
-  .herosection {
-    gap: 50px; /* تقليل الفجوة */
-    padding: 0 40px;
+  .herosection { gap: 50px; padding: 0 40px; }
+  .texthoc h1 { font-size: 30px; }
+  .imghoc img { max-width: 400px; }
+  
+  .mainTech { flex-direction: column; width: 100%; margin-top: 40px; }
+  .content { 
+    flex-direction: row; 
+    padding: 20px; 
+    gap: 30px; /* تقليل المسافة شوية في التابلت */
   }
-
-  .texthoc h1 {
-    font-size: 30px;
-  }
-
-  .texthoc h4 {
-    font-size: 20px;
-  }
-
-  .imghoc img {
-    width: 100%;
-    max-width: 400px; /* ضمان عدم الاقتطاع في النطاق المتوسط */
-  }
-
-  .whitesection p {
-    font-size: 26px; /* تصغير الخط قليلاً لهذا النطاق */
-  }
-
-  /* WHY section */
-  .whySection {
-    width: 90%;
-    margin-top: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    box-sizing: border-box;
-  }
-  .whySection h1 {
-    margin: 0;
-    font-size: 14px;
-    font-weight: 700;
-  }
-
-  /* cards: two per row on mobile (calc with gap) */
-  .whyCards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    justify-content: center;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 4px;
-  }
-  .whySection h1 {
-    font-size: 14px;
-    font-weight: 700;
-  }
-
-  .card {
-    background-color: #fff;
-    color: #121111;
-    width: calc(50% - 14px);
-    min-width: 140px;
-    border-radius: 14px;
-    padding: 12px;
-    box-sizing: border-box;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    text-align: center;
-    height: auto;
-  }
-
-  /* make icon above text in card */
-  .card img {
-    width: 46px;
-    height: 46px;
-    object-fit: contain;
-    margin-bottom: 8px;
-  }
-  .card h4 {
-    margin: 0;
-    font-size: 13px;
-    font-weight: 600;
-  }
-  .ourProcess {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 48px 20px;
-  }
-
-  .ourProcess h1 {
-    font-size: 18px;
-    font-weight: 700;
-    text-align: center;
-  }
-
-  .processCards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 3px;
-    margin: 16px;
-  }
-
-  .singlecard {
-    width: 200px;
-    padding: 8px;
-    gap: 12px;
-    height: 120px;
-  }
-
-  .singlecard h2 {
-    font-size: 16px;
-  }
-
-  .singlecard p {
-    font-size: 14px;
-    text-transform: capitalize;
-  }
-
-  .technologies {
-    margin: 60px 0;
-    padding: 0 20px;
-  }
-
-  .mainTech {
-    flex-direction: column;
-    width: 100%;
-    margin-top: 40px;
-  }
-
-  .content {
-    flex-direction: row;
-    padding: 14px;
-    text-align: center;
-  }
-
-  .content img {
-    width: 74px;
-  }
-
-  .sidecontent {
-    margin-left: 10;
-    align-items: start;
-  }
-
-  .titleshub {
-    display: flex;
-    flex-direction: row;
-    /* flex-wrap: wrap; */
-    gap: 8px;
-  }
-
-  .titles {
-    height: auto;
-    padding: 4.5px 8px;
-    border-width: 0.32px;
-    border-radius: 8px;
-  }
-
-  .titles h2 {
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: capitalize;
-  }
-
-  .icons {
-    flex-wrap: wrap;
-
-    gap: 20px;
-  }
-
-  .icons img {
-    width: 20px;
-  }
-
-  .buttonsFot {
-    flex-direction: row;
-    gap: 16px;
-    padding: 40px 0;
-  }
+  .content img { width: 100px; }
+  .sidecontent { align-items: flex-start; }
 }
 
-
-/* =======================
-💻 TABLET PORTRAIT / VERTICAL BREAKPOINT (<= 1124px) - النقطة الجديدة للتحويل العمودي
-======================= */
 @media (max-width: 1124px) {
-
-  /* HERO SECTION - التحويل إلى التخطيط العمودي */
   .herosection {
-    flex-direction: column-reverse; /* التخطيط عمودي حسب طلبك */
+    flex-direction: column-reverse;
     gap: 48px;
-    height: auto;
-    padding: 40px 20px; /* زيادة Padding لراحة المحتوى */
-    text-align: center;
-  }
-
-  .texthoc {
-    align-items: center;
-    gap: 24px;
-  }
-
-  .texthoc h1 {
-    font-size: 26px;
-    line-height: 1.4;
-  }
-
-  .texthoc h4 {
-    font-size: 18px;
-    font-weight: 500;
-  }
-
-  .buttons {
-    flex-direction: column;
-    gap: 16px;
-    width: 100%;
-    align-items: center;
-  }
-
-  .imghoc img {
-    max-width: 400px;
-    border-radius: 12px;
-  }
-
-  /* **التعديل الجديد لـ .whitesection** */
-  .whitesection p {
-    font-size: 22px; /* تقليل حجم الخط في هذا النطاق */
-    padding: 0 10px;
-  }
-
-  /* لضمان تطبيق تنسيقات 1450px على المكونات الأخرى بشكل صحيح */
-  .whyCards {
-    width: 90%;
-  }
-}
-
-
-/* =======================
-📱 MOBILE RESPONSIVE (<= 768px)
-======================= */
-@media (max-width: 768px) {
-
-  .texthoc h1 {
-    font-size: 22px;
-    line-height: 1.4;
-  }
-
-  .texthoc h4 {
-    font-size: 16px;
-    font-weight: 500;
-  }
-
-  .imghoc img {
-    max-width: 340px; /* تقليل حجم الصورة أكثر للموبايل */
-    border-radius: 12px;
-  }
-
-  .whitesection {
-    height: auto;
     padding: 40px 20px;
-  }
-
-  .whitesection p {
-    font-size: 16px; /* تقليل حجم الخط ليناسب شاشات الموبايل */
-    line-height: 1.5;
-  }
-
-  /* WHY section - تعديلات لـ 768px وأصغر */
-  .card {
-    width: calc(50% - 14px); /* لتبقى بطاقتين في الصف */
-    min-width: 140px;
-    border-radius: 14px;
-    padding: 12px;
-    /* ... باقي تنسيقات الكارد ... */
-  }
-  .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* **يوسّط العنصر الأب** */
-    gap: 16px;
-  }
-  .content img {
-    margin-right: 0;
-  }
-  .sidecontent {
-    align-items: center; /* **يوسّط محتوى sidecontent** */
     text-align: center;
   }
-  .titleshub {
-    justify-content: center; /* **يوسّط الأزرار/العناوين داخل titleshub (موبايل فقط)** */
-  }
-  .icons {
-    justify-content: center; /* يوسّط الأيقونات */
-  }
-
+  .buttons { align-items: center; }
 }
 
-
-/* Optional: for very small phones (max-width: 480px) */
-@media (max-width: 480px) {
-  .texthoc h1 {
-    font-size: 20px;
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column; /* الصورة فوق الكلام في الموبايل */
+    gap: 20px;
+    text-align: center;
   }
-
-  .texthoc h4 {
-    font-size: 14px;
-  }
-
-  .whitesection p {
-    font-size: 14px; /* حجم أصغر جدًا للهواتف الصغيرة */
-  }
-
-  .singlecard h2 {
-    font-size: 16px;
-  }
-
-  .singlecard p {
-    font-size: 13px;
-  }
+  .content img { margin-right: 0; width: 120px; }
+  .sidecontent { align-items: center; text-align: center; }
+  .titleshub, .icons { justify-content: center; }
 }
-.content img {
-  margin-right: 0;
-}
+
+/* تم حذف السطر الأخير الذي كان يسبب المشكلة */
