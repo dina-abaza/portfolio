@@ -75,11 +75,25 @@ export default function FilterSection({ filters, items, activeFilter, setActiveF
                   className=" cursor-pointer group relative overflow-hidden rounded-[12px] shadow-lg transform transition-transform duration-500 hover:scale-[1.04]"
                   style={{ height: "240px" }}
                 >
+                  <div
+                    aria-hidden="true"
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      backgroundImage: `url(${item.image})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      filter: "blur(8px) brightness(0.75)",
+                      transform: "scale(1.1)",
+                      zIndex: 0,
+                    }}
+                  />
                   <Image
                     src={item.image}
                     alt={item.title || ""}
                     fill
-                    className="object-cover rounded-[12px]"
+                    className="object-contain"
+                    style={{ zIndex: 1 }}
                   />
 
                   <div
@@ -89,6 +103,7 @@ export default function FilterSection({ filters, items, activeFilter, setActiveF
                       background: "rgba(0,0,0,0.4)",
                       backdropFilter: "blur(5px)",
                       borderTop: "1px solid rgba(255,255,255,0.1)",
+                      zIndex: 10,
                     }}
                   >
                     <h5

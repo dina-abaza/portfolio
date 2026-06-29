@@ -3,11 +3,11 @@
 // *****************************************************************
 
 export const mobileAppShapes = [
-  { id: 1, title: "An attractive and user-friendly interface (UI/UX).", image: "/sdp_images/phone.png", },
-  { id: 2, title: "High speed and performance.", image: "/sdp_images/limiter.png", },
-  { id: 3, title: "Clean and maintainable code.", image: "/sdp_images/code.png", },
-  { id: 4, title: "Continuous support and updates.", image: "/sdp_images/support.png", },
-  { id: 5, title: "Publishing the app on app stores.", image: "/sdp_images/upload.png", }
+  { id: 1, title: "An attractive and user-friendly interface (UI/UX).", image: "/sdp_images/phone.webp", },
+  { id: 2, title: "High speed and performance.", image: "/sdp_images/limiter.webp", },
+  { id: 3, title: "Clean and maintainable code.", image: "/sdp_images/code.webp", },
+  { id: 4, title: "Continuous support and updates.", image: "/sdp_images/support.webp", },
+  { id: 5, title: "Publishing the app on app stores.", image: "/sdp_images/upload.webp", }
 ];
 
 export const ourProcess = [
@@ -31,7 +31,7 @@ static data = [
   // 1. 🎨 UI/UX DESIGN (تصميم الواجهات)
   new MainTech(
     "uiux_design_methodology",
-    "/sdp_images/ui-ux.png",
+    "/sdp_images/ui-ux.webp",
     [
       "Figma & FigJam for Collaboration",
       "Adobe Suite (Photoshop/Illustrator)",
@@ -49,7 +49,7 @@ static data = [
   // 2. 📱 FLUTTER DEVELOPMENT (تطوير فلاتر)
   new MainTech(
     "flutter_dev",
-    "/flutterimg.jpg",
+    "/flutterimg.webp",
     [
       "Requirement Gathering",
       "App Architecture Design",
@@ -70,7 +70,7 @@ static data = [
   // 3. 🖥️ FRONT-END DEVELOPMENT (تطوير الواجهات الأمامية)
   new MainTech(
     "frontend_dev",
-    "/frontimg.jpg",
+    "/frontimg.webp",
     [
       "HTML5, CSS, Tailwind & Bootstrap",
       "JavaScript & TypeScript",
@@ -90,7 +90,7 @@ static data = [
   // 4. ⚙️ 🟢 BACK-END DEVELOPMENT (تم دمج Laravel و Node.js في قسم واحد)
   new MainTech(
     "backend_dev",
-    "/backimg.png", // يمكنك اختيار أي صورة لتمثيل الواجهة الخلفية
+    "/backimg.webp", // يمكنك اختيار أي صورة لتمثيل الواجهة الخلفية
     [
       // Laravel & PHP Stack
       "Laravel Framework (Routing, Controllers, Middleware)",
@@ -116,7 +116,7 @@ static data = [
   // 5. 🗄️ DATABASE & DATA MODELING (قواعد البيانات) - أصبح رقم 5 بعد الدمج
   new MainTech(
     "database_model",
-    "/sdp_images/database.png",
+    "/sdp_images/database.webp",
     [
       "Relational: MySQL, PostgreSQL",
       "NoSQL: MongoDB",
@@ -135,7 +135,7 @@ static data = [
   // 6. 🛠️ TOOLS & DEVOPS (الأدوات والأتمتة) - أصبح رقم 6 بعد الدمج
   new MainTech(
     "dev_tools_devops",
-    "/sdp_images/tools.png",
+    "/sdp_images/tools.webp",
     [
       "Git & GitHub Version Control",
       "Feature & Unit Testing",
