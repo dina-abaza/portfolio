@@ -20,25 +20,38 @@ export default function OurWorkShowcase() {
     );
   }
   
-  const showcaseImages = project.subImages ? project.subImages.slice(0, 3) : [];
+  const showcaseImages = project.subImages
+    ? project.subImages.length > 3
+      ? project.subImages.slice(1)
+      : project.subImages.slice(0, 3)
+    : [];
 
   return (
     <>
       <section className="w-full flex justify-center bg-[#0C0C0C] py-[60px] px-[20px]">
         <div className="w-full lg:max-w-[1550px] mx-auto flex flex-col gap-[20px] md:gap-[44px]">
 
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
+        <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-3">
   {showcaseImages.map((img, i) => (
     <div
       key={i}
-      className="w-full sm:w-1/3 aspect-[4/3] overflow-hidden rounded-[16px]"
+      className="w-full sm:w-1/3 overflow-hidden rounded-[16px] relative"
+      style={{ height: "320px" }}
     >
       <Image
         src={img}
+        alt=""
+        fill
+        aria-hidden="true"
+        className="object-cover"
+        style={{ filter: "blur(8px) brightness(0.75)", transform: "scale(1.1)", zIndex: 0 }}
+      />
+      <Image
+        src={img}
         alt={`showcase-image-${i}`}
-        width={800}
-        height={600}
-        className="w-full h-full object-cover"
+        fill
+        className="object-contain"
+        style={{ zIndex: 1 }}
       />
     </div>
   ))}
