@@ -6,10 +6,10 @@ import Image from "next/image";
 
 export default function ImagesHome() {
 const images = [
-"/posterhome1.png",
-"/posterhome2.png",
-"/posterhome3.png",
-"/posterhome4.png",
+"/posterhome1.webp",
+"/posterhome2.webp",
+"/posterhome3.webp",
+"/posterhome4.webp",
 ];
 
 const animations = [
