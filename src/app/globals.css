@@ -1,27 +1,137 @@
 @import "tailwindcss";
 
 :root {
-  --background: #070707;
-  --foreground: #ededed;
-  
-}
-/* globals.css */
-html {
-  scroll-behavior: smooth;
+  --bg-primary:    #FFFFFF;
+  --bg-surface:    #FAF8F3;
+  --bg-accent:     #F0F7F1;      /* خفيف أخضر */
+  --accent-forest: #15803D;
+  --accent-green:  #22A559;
+  --accent-sage:   #7A9B76;
+  --accent-sand:   #A98F5C;
+  --text-primary:  #0F172A;
+  --text-muted:    #64748B;
+  --border:        rgba(21, 128, 61, 0.1);
+  --border-active: rgba(21, 128, 61, 0.4);
 }
 
+html  { scroll-behavior: smooth; }
+
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--bg-primary);
+  color:      var(--text-primary);
   font-family: 'Inter', sans-serif;
 }
-body {
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Gradient text ─────────────────────────────── */
+.text-gradient {
+  background: linear-gradient(135deg, #15803D 0%, #2F9E52 55%, #7A9B76 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-warm {
+  background: linear-gradient(135deg, #22A559 0%, #5CB176 55%, #A98F5C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #A98F5C 0%, #C9AD7A 60%, #E8DCC0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Card ────────────────────────────────────────── */
+.card {
+  background: #FFFFFF;
+  border: 1px solid rgba(21, 128, 61, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 8px 32px rgba(21, 128, 61,0.05);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+.card:hover {
+  border-color: rgba(21, 128, 61, 0.32);
+  box-shadow: 0 4px 24px rgba(21, 128, 61,0.14), 0 1px 3px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+}
+
+/* ── Dot texture ────────────────────────────────── */
+.dot-grid {
+  background-image: radial-gradient(rgba(21, 128, 61, 0.12) 1px, transparent 1px);
+  background-size: 38px 38px;
+}
+
+/* ── Section divider ────────────────────────────── */
+.divider-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(21, 128, 61, 0.25), transparent);
+}
+
+/* ── Animations ──────────────────────────────────── */
+@keyframes orb-float-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  30%       { transform: translate(60px, -80px) scale(1.08); }
+  65%       { transform: translate(-40px, 30px) scale(0.94); }
+}
+@keyframes orb-float-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25%       { transform: translate(-70px, 40px) scale(0.96); }
+  70%       { transform: translate(45px, -55px) scale(1.06); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.35; }
+  50%       { opacity: 0.65; }
+}
+@keyframes float-y {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.orb-a      { animation: orb-float-a 14s ease-in-out infinite; }
+.orb-b      { animation: orb-float-b 18s ease-in-out infinite; }
+.pulse-glow { animation: pulse-glow 3.5s ease-in-out infinite; }
+.float-y    { animation: float-y 4s ease-in-out infinite; }
+.spin-slow  { animation: spin-slow 22s linear infinite; }
+
+/* ── Marquee ────────────────────────────────── */
+@keyframes marquee-left  { from { transform: translateX(0); }    to { transform: translateX(-50%); } }
+@keyframes marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); }    }
+
+.marquee-left  { animation: marquee-left  32s linear infinite; }
+.marquee-right { animation: marquee-right 38s linear infinite; }
+.marquee-track:hover .marquee-left,
+.marquee-track:hover .marquee-right { animation-play-state: paused; }
+
+/* ── Label pill ───────────────────────────────────── */
+.label-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 16px;
+  background: rgba(21, 128, 61, 0.06);
+  border: 1px solid rgba(21, 128, 61, 0.22);
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: #22A559;
   text-transform: uppercase;
 }
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;  /* IE و Edge */
-  scrollbar-width: none;     /* Firefox */
+
+/* ── Custom scrollbar ─────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #FAF8F3; }
+::-webkit-scrollbar-thumb {
+  background: rgba(21, 128, 61, 0.35);
+  border-radius: 9999px;
 }
