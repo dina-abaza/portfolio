@@ -147,7 +147,7 @@ function ProjectCard({ project, i, onOpen }) {
                 }}
               >
                 {/* Image — blurred backdrop fills white-bg mockups */}
-                <div className="relative w-full h-64 overflow-hidden">
+                <div className="relative w-full aspect-[16/10] overflow-hidden">
                   {(project.coverImage || project.subImages?.[0]) ? (
                     <>
                       {/* Blurred bg layer */}

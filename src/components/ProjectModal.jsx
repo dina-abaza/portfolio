@@ -62,7 +62,7 @@ export default function ProjectModal({ project, onClose }) {
 
           <div className="flex flex-col lg:flex-row h-full">
             {/* ── Left: image gallery ── */}
-            <div className="lg:w-[55%] flex-shrink-0 flex flex-col min-h-0">
+            <div className="h-[42vh] lg:h-full lg:w-[55%] flex-shrink-0 flex flex-col min-h-0">
               {/* Main image — fills remaining height */}
               <div className="relative flex-1 overflow-hidden rounded-tl-2xl rounded-tr-2xl lg:rounded-tr-none lg:rounded-bl-2xl bg-slate-100">
                 <AnimatePresence mode="wait">
