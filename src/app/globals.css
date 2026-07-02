@@ -128,6 +128,15 @@ body {
   text-transform: uppercase;
 }
 
+/* ── Footer logo (smaller on mobile) ─────────────── */
+.footer-logo {
+  width: 108px;
+  height: 36px;
+}
+@media (min-width: 640px) {
+  .footer-logo { width: 144px; height: 48px; }
+}
+
 /* ── Custom scrollbar ─────────────────────────────── */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #FAF8F3; }

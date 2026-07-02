@@ -62,7 +62,7 @@ export default function Footer() {
           >
             {T.footer.ctaH}
             <br />
-            <span style={{ color: "#DDD6FE" }}>{T.footer.ctaSub}</span>
+            <span style={{ color: "#E8DCC0" }}>{T.footer.ctaSub}</span>
           </p>
           <p
             className="mb-8 mx-auto"
@@ -101,7 +101,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             {/* Logo */}
             <Link href="/" className="inline-block mb-5">
-              <AuroraLogo variant="light" size={32} />
+              <AuroraLogo variant="light" className="footer-logo" />
             </Link>
             <p
               className="text-sm leading-relaxed mb-6"

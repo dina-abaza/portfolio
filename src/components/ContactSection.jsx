@@ -34,7 +34,7 @@ const inputBase = {
 };
 
 export default function ContactSection() {
-  const { T } = useLang();
+  const { T, isAr } = useLang();
   const CONTACT_INFO = CONTACT_VALUES.map((c) => ({ ...c, label: T.contact.labels[c.key] }));
   const [form, setForm] = useState({ fullName: "", email: "", phone: "", ideaDescription: "" });
   const [errors, setErrors] = useState({});
@@ -247,7 +247,12 @@ export default function ContactSection() {
                 placeholder={T.contact.phone}
                 value={form.phone}
                 onChange={handleChange}
-                style={{ ...inputBase, border: getBorder(errors.phone) }}
+                style={{
+                  ...inputBase,
+                  border: getBorder(errors.phone),
+                  direction: isAr ? "rtl" : "ltr",
+                  textAlign: isAr ? "right" : "left",
+                }}
               />
               <textarea
                 name="ideaDescription"

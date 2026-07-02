@@ -72,7 +72,7 @@ const SHAPES = [
 ];
 
 export default function HeroSection() {
-  const { T } = useLang();
+  const { T, isAr } = useLang();
   const STATS = STATS_BASE.map((s, i) => ({ ...s, label: T.hero.stats[i] }));
   return (
     <section
@@ -175,10 +175,11 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 45 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="font-bold leading-[1.04] tracking-tight mb-6"
+          className="font-bold tracking-tight mb-6"
           style={{
             fontSize: "clamp(2.8rem, 7.5vw, 6rem)",
             color: "#0F172A",
+            lineHeight: isAr ? 1.35 : 1.04,
           }}
         >
           {T.hero.h1_1}
