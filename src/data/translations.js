@@ -66,7 +66,7 @@ export const translations = {
         "Frontend Developer":  "Frontend Developer",
         "Software Developer":  "Software Developer",
         "Full Stack Developer":"Full Stack Developer",
-        "UI/UX Designer":      "UI/UX Designer",
+        "Product Designer":    "Product Designer",
       },
     },
     contact: {
@@ -173,7 +173,7 @@ export const translations = {
         "Frontend Developer":  "مطور فرونت إند",
         "Software Developer":  "مطور برمجيات",
         "Full Stack Developer": "مطور فول ستاك",
-        "UI/UX Designer":      "مصمم UI/UX",
+        "Product Designer":    "مصمم منتج",
       },
     },
     contact: {

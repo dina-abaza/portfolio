@@ -31,6 +31,29 @@ import {
 
   export const ourworkData = [
   {
+    id: "16",
+    title: "Single Office",
+    category: "website",
+    description: "Single-tenant law firm management system — each firm gets its own fully isolated database, environment, and complete data privacy.",
+    demoLink: "https://single-office.vercel.app",
+    coverImage: "/singleoffice1.webp",
+    subImages: ["/singleoffice2.webp", "/singleoffice3.webp", "/singleoffice4.webp"],
+    members: 4,
+    time: "2 months",
+    problem: "Law firms wanted the full power of a SaaS legal management platform, but without sharing infrastructure or a database with other offices — a shared multi-tenant setup couldn't guarantee the level of privacy and control they needed over their clients' and cases' data.",
+    solution: "Reworked the multi-tenant SaaS Lawyers platform into a Single Office Edition — a dedicated, self-contained instance per law firm with its own database and environment, covering the full operational lifecycle: cases, sessions, consultations, contracts and wakalas, legal & general document archiving, a double-entry accounting system (chart of accounts, invoices, receipts), employee HR (attendance, payroll, leave, tasks), and custom roles & permissions per team.",
+    keyFeatures: [
+      { icon: <FaGavel />,         text: "Case & Session Management" },
+      { icon: <FaFileContract />,  text: "Consultations, Contracts & Wakalas" },
+      { icon: <FaBook />,          text: "Legal & Document Archiving" },
+      { icon: <FaMoneyBillWave />, text: "Double-Entry Accounting System" },
+      { icon: <FaUserTie />,       text: "Employee HR: Attendance, Payroll & Leave" },
+      { icon: <FaShieldAlt />,     text: "Custom Roles & Permissions" },
+      { icon: <FaLock />,          text: "Fully Isolated Single-Tenant Database" },
+    ],
+    technologies: ["Next.js", "React 19", "TanStack Query", "Axios", "React Toastify", "Tailwind CSS v4", "Laravel 12", "Spatie Permissions", "Sanctum"],
+  },
+  {
   id: "2",
   title: "Landing Page",
   category: "website",
