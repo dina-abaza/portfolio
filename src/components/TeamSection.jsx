@@ -31,7 +31,7 @@ const TEAM = [
   },
   {
     name: "Ahmed Saber",
-    role: "UI/UX Designer",
+    role: "Product Designer",
     image: "/team_photos/Ellipse 8-2.webp",
     objectFit: "cover",
     objectPosition: "center 35%",
