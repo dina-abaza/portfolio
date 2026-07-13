@@ -55,14 +55,14 @@ import {
   },
   {
   id: "2",
-  title: "Landing Page",
+  title: "Business Intelligence SaaS Website",
   category: "website",
-  description: "A clean, engaging page that highlights the company's services and identity",
+  description: "Designed and developed a responsive marketing website for a Business Intelligence SaaS platform, showcasing real-time dashboards, analytics features, integrations, and product capabilities with a modern, conversion-focused user experience.",
   demoLink: "https://landing-page-theta-sable.vercel.app",
   coverImage: "/landing7.webp",
   subImages: ["/landing2.webp", "/landing3.webp", "/landing4.webp"],
   members: 2,
-  time: "2 days",
+  time: "5 days",
   problem: "Clients needed a visually appealing landing page to quickly convey their brand and services online.",
   solution: "We designed a minimal, responsive landing page with a form for sending messages and clear layout for users.",
   keyFeatures: [
