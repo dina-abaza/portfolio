@@ -65,6 +65,21 @@ export default function ProjectModal({ project, onClose }) {
             <div className="h-[42vh] lg:h-full lg:w-[55%] flex-shrink-0 flex flex-col min-h-0">
               {/* Main image — fills remaining height */}
               <div className="relative flex-1 overflow-hidden rounded-tl-2xl rounded-tr-2xl lg:rounded-tr-none lg:rounded-bl-2xl bg-slate-100">
+                {images.length === 0 ? (
+                  <div
+                    className="absolute inset-0 flex flex-col items-center justify-center gap-2"
+                    style={{ background: "linear-gradient(135deg, #E6F4EA 0%, #EAF3EC 50%, #FAF5FF 100%)" }}
+                  >
+                    <svg width="44" height="44" viewBox="0 0 36 36" fill="none">
+                      <rect width="36" height="36" rx="10" fill="rgba(21, 128, 61,0.1)"/>
+                      <path d="M10 26l5-6 4 5 3-4 4 5" stroke="#22A559" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="13" cy="15" r="2.5" stroke="#22A559" strokeWidth="1.8"/>
+                    </svg>
+                    <span style={{ fontSize: "11px", color: "#9f7aea", fontWeight: 600, letterSpacing: "1.5px", textTransform: "uppercase" }}>
+                      No image yet
+                    </span>
+                  </div>
+                ) : (
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={slide}
@@ -93,6 +108,7 @@ export default function ProjectModal({ project, onClose }) {
                     />
                   </motion.div>
                 </AnimatePresence>
+                )}
 
                 {/* Prev / Next arrows */}
                 {images.length > 1 && (
@@ -119,12 +135,14 @@ export default function ProjectModal({ project, onClose }) {
                 )}
 
                 {/* Slide counter */}
-                <div
-                  className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-bold"
-                  style={{ background: "rgba(0,0,0,0.45)", color: "#fff", backdropFilter: "blur(6px)" }}
-                >
-                  {slide + 1} / {images.length}
-                </div>
+                {images.length > 0 && (
+                  <div
+                    className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-bold"
+                    style={{ background: "rgba(0,0,0,0.45)", color: "#fff", backdropFilter: "blur(6px)" }}
+                  >
+                    {slide + 1} / {images.length}
+                  </div>
+                )}
               </div>
 
               {/* Thumbnails */}
