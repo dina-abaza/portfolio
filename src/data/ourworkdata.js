@@ -290,6 +290,8 @@ import {
     title: "Clinixa Pro",
     category: "application",
     description: "Offline-first desktop app for managing clinics — patients, appointments, billing, and staff — with a local database that syncs securely to the cloud.",
+    coverImage: "/clinixa1.webp",
+    subImages: ["/clinixa1.webp", "/clinixa2.webp"],
     members: 3,
     time: "1 month",
     problem: "Clinics needed a reliable system to manage patients, appointments, and billing without depending on a constant internet connection, while still keeping data backed up and accessible across devices.",
